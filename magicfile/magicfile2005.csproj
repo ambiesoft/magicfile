@@ -41,7 +41,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\..\..\..\LinkOut\magicFile\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -115,11 +115,11 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y /e /h $(SolutionDir)\$(ProjectName)\routines\*.* $(TargetDir)\routines\
-copy $(SolutionDir)\$(ProjectName)\License.txt $(TargetDir)\
-copy $(SolutionDir)\$(ProjectName)\LicenseOfFile.txt $(TargetDir)\
-del C:\Linkout\magicfile\src.7z
+    <PostBuildEvent>mkdir "$(TargetDir)routines\"
+xcopy /y /e /h $(SolutionDir)$(TargetName)\routines\*.* "$(TargetDir)routines\"
+copy $(SolutionDir)$(TargetName)\License.txt $(TargetDir)
+copy $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
 cd $(ProjectDir)
-"C:\LegacyPrograms\7-Zip\7z.exe" a $(TargetDir)src.7z @7zlist.lst</PostBuildEvent>
+7z.exe a $(TargetDir)src.7z @7zlist.lst</PostBuildEvent>
   </PropertyGroup>
 </Project>
