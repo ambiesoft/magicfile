@@ -209,7 +209,4 @@
         AAAAAAAB//////////////////////////8=
 </value>
   </data>
-  <data name="COMMAN_LINE_END_WITH_ERROR" xml:space="preserve">
-    <value>コマンドラインがエラーで終了しました。</value>
-  </data>
 </root>

@@ -169,7 +169,6 @@
             this.Controls.Add(this.txtMime);
             this.Controls.Add(this.txtMagic);
             this.Font = null;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);

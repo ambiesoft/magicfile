@@ -188,6 +188,7 @@ namespace magicfile
                 analyzefile(InputFile);
         }
 
+        // private readonly List<string> generalExt_ = new List<string>( "bin","txt","xml");
         private string beforeChangeFilename;
         System.IO.StreamReader srBeforeChangeFile;
         private void btnChangeExt_Click(object sender, EventArgs e)
@@ -205,7 +206,18 @@ namespace magicfile
                     string srcwithoutext = srcinfo.FullName.Substring(0, srcinfo.FullName.Length - extlen);
                     string ext = txtExt.Text;
                     ext = ext.Split(' ')[0];
+
                     string dstname = srcwithoutext + '.' + ext;
+                    if (DialogResult.Yes != MessageBox.Show(
+                        Properties.Resources.Q_RENAME_EXTENSION,
+                        Application.ProductName,
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question,
+                        MessageBoxDefaultButton.Button2))
+                    {
+                        return;
+                    }
+
                     srcinfo.MoveTo(dstname);
                     beforeChangeFilename = InputFile;
                     srBeforeChangeFile = new StreamReader(dstname);

@@ -68,5 +68,14 @@ namespace magicfile.Properties {
                 return ResourceManager.GetString("COMMAN_LINE_END_WITH_ERROR", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Are you sure to rename extension? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Q_RENAME_EXTENSION {
+            get {
+                return ResourceManager.GetString("Q_RENAME_EXTENSION", resourceCulture);
+            }
+        }
     }
 }

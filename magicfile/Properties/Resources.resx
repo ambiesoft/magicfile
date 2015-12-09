@@ -120,4 +120,7 @@
   <data name="COMMAN_LINE_END_WITH_ERROR" xml:space="preserve">
     <value>Command line end with an error.</value>
   </data>
+  <data name="Q_RENAME_EXTENSION" xml:space="preserve">
+    <value>Are you sure to rename extension?</value>
+  </data>
 </root>

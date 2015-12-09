@@ -76,6 +76,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ja-JP.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -115,10 +118,10 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>mkdir "$(TargetDir)routines\"
+    <PostBuildEvent>mkdir "$(TargetDir)routines"
 xcopy /y /e /h $(SolutionDir)$(TargetName)\routines\*.* "$(TargetDir)routines\"
-copy $(SolutionDir)$(TargetName)\License.txt $(TargetDir)
-copy $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
+copy /y $(SolutionDir)$(TargetName)\License.txt $(TargetDir)
+copy /y $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
 cd $(ProjectDir)
 7z.exe a $(TargetDir)src.7z @7zlist.lst</PostBuildEvent>
   </PropertyGroup>

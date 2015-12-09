@@ -9,3 +9,10 @@ magicfile2005.csproj
 Program.cs
 Properties
 ReadMe.txt
+
+Properties\AssemblyInfo.cs
+Properties\Resources.Designer.cs
+Properties\Resources.ja-JP.resx
+Properties\Resources.resx
+Properties\Settings.Designer.cs
+Properties\Settings.settings
