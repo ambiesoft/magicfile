@@ -88,7 +88,7 @@ namespace magicfile
                 if (txtMime.Text.Length != 0)
                 {
                     object oext = Microsoft.Win32.Registry.GetValue(
-                        @"HKEY_CLASSES_ROOT\MIME\Database\Content Type\" + txtMime.Text, // /x-bittorrent",
+                        @"HKEY_CLASSES_ROOT\MIME\Database\Content Type\" + txtMime.Text,
                         @"Extension", string.Empty);
                     if (oext != null)
                     {

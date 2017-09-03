@@ -1,16 +1,16 @@
-MagicFile ver0.1
-file�R�}���h��GUI���b�p�[�ł��B
-�t�@�C���̏���mime-type��\�����܂��B
-�g���q���\�����܂����A���܂���ۂɕ��y���Ă�����̂Ƃ͈Ⴄ�ꍇ�������ł��B
+﻿MagicFile ver0.1
+fileコマンドのGUIラッパーです。
+ファイルの情報やmime-typeを表示します。
+拡張子も表示しますが、あまり実際に普及しているものとは違う場合が多いです。
 
-sendto�ɓ���Ďg���ƕ֗��ł��B
+sendtoに入れて使うと便利です。
 
-�R�}���h���C���͍ŏ��̂��̂��t�@�C���Ƃ݂Ȃ��܂��B
+コマンドラインは最初のものをファイルとみなします。
 
-�A�C�R���͂�������
+アイコンはここから
 http://www.flickr.com/photos/9465588@N05/3213629421/sizes/m/in/photostream/
 
-file.exe�Ȃǂ�cygwin����R�s�[���܂���
+file.exeなどはcygwinからコピーしました
 
 2012/4/23
-���J
+公開
