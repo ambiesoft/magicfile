@@ -12,5 +12,3 @@ http://www.flickr.com/photos/9465588@N05/3213629421/sizes/m/in/photostream/
 
 file.exeなどはcygwinからコピーしました
 
-2012/4/23
-公開

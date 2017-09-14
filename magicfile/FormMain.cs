@@ -1,17 +1,16 @@
 /*
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
+    magicfile is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+    Foobar is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+    You should have received a copy of the GNU General Public License
+    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 using System;
@@ -24,6 +23,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using System.Threading;
+using System.Reflection;
+
 namespace magicfile
 {
     public partial class FormMain : Form
@@ -242,6 +243,43 @@ namespace magicfile
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Stop);
             }
+
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(Application.ProductName);
+            sb.Append(" ");
+            sb.Append("version");
+            sb.Append(" ");
+            sb.Append(Assembly.GetExecutingAssembly().GetName().Version.Major.ToString());
+            sb.Append(".");
+            sb.Append(Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString());
+
+            sb.AppendLine();
+            sb.AppendLine();
+            sb.AppendLine(
+            "This program is free software: you can redistribute it and/or modify" + "\r\n" +
+            "it under the terms of the GNU General Public License as published by" + "\r\n" +
+            "the Free Software Foundation, either version 3 of the License, or" + "\r\n" +
+            "(at your option) any later version." + "\r\n" +
+            "" + "\r\n" +
+            "This program is distributed in the hope that it will be useful," + "\r\n" +
+            "but WITHOUT ANY WARRANTY; without even the implied warranty of" + "\r\n" +
+            "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the" + "\r\n" +
+            "GNU General Public License for more details." + "\r\n" +
+            "" + "\r\n" +
+            "You should have received a copy of the GNU General Public License" + "\r\n" +
+            "along with this program.  If not, see <http://www.gnu.org/licenses/>."
+            );
+
+            Ambiesoft.CenteredMessageBox.Show(
+                this,
+                sb.ToString(),
+                Application.ProductName,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
 
         }
     }

@@ -49,12 +49,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release\MagicFile\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CenterWinDialog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Linkout\DNAssembly\CenterWinDialog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -92,7 +96,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="COPYING" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="7zlist.lst" />
+    <Content Include="History.txt" />
     <Content Include="icon.ico" />
     <Content Include="License.txt" />
     <Content Include="LicenseOfFile.txt" />
@@ -130,7 +135,11 @@
 xcopy /y /e /h $(SolutionDir)$(TargetName)\routines\*.* "$(TargetDir)routines\"
 copy /y $(SolutionDir)$(TargetName)\License.txt $(TargetDir)
 copy /y $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
-cd $(ProjectDir)
-7z.exe a $(TargetDir)src.7z @7zlist.lst</PostBuildEvent>
+copy /y $(SolutionDir)$(TargetName)\ReadMe.txt $(TargetDir)
+copy /y $(SolutionDir)$(TargetName)\History.txt $(TargetDir)
+copy /y $(SolutionDir)$(TargetName)\COPYING $(TargetDir)
+
+REM cd $(ProjectDir)
+REM 7z.exe a $(TargetDir)src.7z @7zlist.lst</PostBuildEvent>
   </PropertyGroup>
 </Project>
