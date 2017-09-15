@@ -101,6 +101,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="v2v4.exe.config" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -138,6 +139,8 @@ copy /y $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
 copy /y $(SolutionDir)$(TargetName)\ReadMe.txt $(TargetDir)
 copy /y $(SolutionDir)$(TargetName)\History.txt $(TargetDir)
 copy /y $(SolutionDir)$(TargetName)\COPYING $(TargetDir)
+copy /y $(SolutionDir)$(TargetName)\v2v4.exe.config $(TargetDir)\$(TargetFileName).config
+
 
 REM cd $(ProjectDir)
 REM 7z.exe a $(TargetDir)src.7z @7zlist.lst</PostBuildEvent>
