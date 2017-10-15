@@ -1,0 +1,30 @@
+{
+	"name": "magicfile",
+	"solution": "magicfile2013.sln",
+	"targetproject": "magicfile2013",
+	"configuration": "Release",
+    "targets": [
+            {
+            	"setoutdirforbuild": true,
+                "outdir" : "C:/Linkout/magicfile/",
+                "platform":"Any CPU",
+                "setoutdirforbuild": true
+            }
+    ],
+    "archivedir": "C:/Linkout/",
+    "remotedir": "http://ambiesoft.fam.cx/ffdav/uploads/magicfile/",
+    "remotesha1" : "http://ambiesoft.fam.cx/ffdav/uploads/getSha1.php?file=magicfile/{}",
+    
+    "TotalFileCount": 19,
+    
+    "ShouldNotBeFiles": [
+    ],
+    
+    "ShouldBeFiles": [
+    ],
+    
+    "ShouldBeOneOfThem": [],
+    
+    "obtainverfrom": "History.txt",
+    "obtainverregex": "\\d+\\.\\d+"
+}
