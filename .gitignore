@@ -1,3 +1,6 @@
+*.user
+*.suo
+
 magicfile/bin/
 magicfile/obj/
 magicfile2008.suo

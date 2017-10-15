@@ -274,7 +274,7 @@ namespace magicfile
             "along with this program.  If not, see <http://www.gnu.org/licenses/>."
             );
 
-            Ambiesoft.CenteredMessageBox.Show(
+            Ambiesoft.CppUtils.CenteredMessageBox(
                 this,
                 sb.ToString(),
                 Application.ProductName,
