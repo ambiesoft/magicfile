@@ -256,6 +256,8 @@ namespace magicfile
             sb.Append(Assembly.GetExecutingAssembly().GetName().Version.Major.ToString());
             sb.Append(".");
             sb.Append(Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString());
+            sb.AppendLine();
+            sb.Append("Copyright 2017 Ambiesoft");
 
             sb.AppendLine();
             sb.AppendLine();

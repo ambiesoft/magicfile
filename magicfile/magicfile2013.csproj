@@ -58,7 +58,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ambiesoft.AmbLibcpp">
-      <HintPath>..\..\..\..\..\..\Linkout\DNAssembly.NET4\Ambiesoft.AmbLibcpp.dll</HintPath>
+      <HintPath>C:\Linkout\DNAssembly.NET4\Ambiesoft.AmbLibcpp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -145,12 +145,26 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>mkdir "$(TargetDir)routines"
-xcopy /y /e /h $(SolutionDir)$(TargetName)\routines\*.* "$(TargetDir)routines\"
-copy /y $(SolutionDir)$(TargetName)\License.txt $(TargetDir)
-copy /y $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
-copy /y $(SolutionDir)$(TargetName)\ReadMe.txt $(TargetDir)
-copy /y $(SolutionDir)$(TargetName)\History.txt $(TargetDir)
-copy /y $(SolutionDir)$(TargetName)\COPYING $(TargetDir)
+REM xcopy /y /e /h $(SolutionDir)$(TargetName)\routines\*.* "$(TargetDir)routines\"
+
+xcopy /f /y "$(SolutionDir)file\out\bin\file.exe" "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)file\out\bin\libgcc_s_dw2-1.dll" "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)file\out\bin\libiconv-2.dll" "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)file\out\bin\libintl-8.dll" "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)file\out\bin\libsystre-0.dll" "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)file\out\bin\libtre-5.dll" "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)file\out\bin\libwinpthread-1.dll" "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)file\out\share\misc\magic.mgc" "$(TargetDir)routines\"
+xcopy /f /y "$(ProjectDir)mime.txt" "$(TargetDir)routines\"
+
+REM
+REM
+REM
+xcopy /f /y $(SolutionDir)$(TargetName)\License.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)$(TargetName)\ReadMe.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)$(TargetName)\History.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)$(TargetName)\COPYING $(TargetDir)
 REM copy /y $(SolutionDir)$(TargetName)\v2v4.exe.config $(TargetDir)\$(TargetFileName).config
 
 
