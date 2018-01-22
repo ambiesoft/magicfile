@@ -15,24 +15,12 @@
     "remotedir": "http://ambiesoft.fam.cx/ffdav/uploads/magicfile/",
     "remotesha1" : "http://ambiesoft.fam.cx/ffdav/uploads/getSha1.php?file=magicfile/{}",
     
-    "TotalFileCount": 21,
+    "TotalFileCount": 19,
     
     "ShouldNotBeFiles": [
     ],
     
-    "ShouldBeFiles": [
-	    "routines\\libiconv-2.dll",
-		"routines\\libintl-8.dll",
-		"routines\\libmagic-1.dll",
-		"routines\\libsystre-0.dll",
-		"routines\\libtre-5.dll",
-		"routines\\libwinpthread-1.dll",
-		"routines\\magic.mgc",
-		"routines\\mime.txt",
-		"routines\\file.exe",
-		"routines\\libgcc_s_dw2-1.dll"
-    ],
-    
+    "ShouldBeFiles": [],
     "ShouldBeOneOfThem": [],
     
     "obtainverfrom": "History.txt",
