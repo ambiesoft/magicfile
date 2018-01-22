@@ -145,7 +145,7 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>mkdir "$(TargetDir)routines"
-REM xcopy /y /e /h $(SolutionDir)$(TargetName)\routines\*.* "$(TargetDir)routines\"
+xcopy /y /e /h $(SolutionDir)$(TargetName)\routines\*.* "$(TargetDir)routines\"
 
 xcopy /f /y "$(SolutionDir)file\out\bin\file.exe" "$(TargetDir)routines\"
 xcopy /f /y "$(SolutionDir)file\out\bin\libmagic-1.dll" "$(TargetDir)routines\"
