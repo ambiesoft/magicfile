@@ -130,7 +130,8 @@ namespace magicfile
 
             string text = txtExt.Text;
             text = text.Split(' ')[0];
-            if (txtExt.Text.Length != 0 && (string.Compare(text, origExt, true) != 0))
+            if( (txtExt.Text.Length != 0 && (string.Compare(text, origExt, true) != 0)) &&
+                !IsWellknownExtension(text))
             {
                 btnChangeExt.Enabled = true;
             }
@@ -139,7 +140,11 @@ namespace magicfile
                 btnChangeExt.Enabled = false;
             }
         }
-
+        bool IsWellknownExtension(string ext)
+        {
+            return string.Compare(ext, "bin", true) == 0 ||
+                string.Compare(ext, "txt", true) == 0;
+        }
         private void btnOK_Click(object sender, EventArgs e)
         {
             Close();
@@ -209,7 +214,8 @@ namespace magicfile
                     ext = ext.Split(' ')[0];
 
                     string dstname = srcwithoutext + '.' + ext;
-                    if (DialogResult.Yes != MessageBox.Show(
+                    if (DialogResult.Yes != Ambiesoft.CppUtils.CenteredMessageBox(
+                        this,
                         Properties.Resources.Q_RENAME_EXTENSION,
                         Application.ProductName,
                         MessageBoxButtons.YesNo,
@@ -224,7 +230,7 @@ namespace magicfile
                     srBeforeChangeFile = new StreamReader(dstname);
                     InputFile = dstname;
                     analyzefile(dstname);
-                    btnChangeExt.Text = "bbb";
+                    /// btnChangeExt.Text = "bbb";
                 }
                 else
                 {
@@ -234,7 +240,7 @@ namespace magicfile
                     InputFile = beforeChangeFilename;
                     beforeChangeFilename = null;
                     analyzefile(InputFile);
-                    btnChangeExt.Text = "bbb";
+                    /// btnChangeExt.Text = "bbb";
                 }
             }
             catch (Exception ex)
