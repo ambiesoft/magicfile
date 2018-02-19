@@ -112,13 +112,16 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="COMMAN_LINE_END_WITH_ERROR" xml:space="preserve">
     <value>Command line end with an error.</value>
+  </data>
+  <data name="INTPUFILE_NOT_FOUND" xml:space="preserve">
+    <value>"{0}" not found.</value>
   </data>
   <data name="Q_RENAME_EXTENSION" xml:space="preserve">
     <value>Are you sure to rename extension?</value>

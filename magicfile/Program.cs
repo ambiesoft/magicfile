@@ -38,6 +38,14 @@ namespace magicfile
             FormMain f = new FormMain();
             if (args.Length >= 1)
             {
+                if(!File.Exists(args[0]))
+                {
+                    MessageBox.Show(string.Format(Properties.Resources.INTPUFILE_NOT_FOUND, args[0]),
+                        Application.ProductName,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
                 f.InputFile = args[0];
             }
             Application.Run(f);
