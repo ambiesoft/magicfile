@@ -263,9 +263,10 @@ namespace magicfile
             sb.Append(".");
             sb.Append(Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString());
             sb.AppendLine();
-            sb.Append("Copyright 2017 Ambiesoft");
+            sb.AppendLine("Copyright 2017 Ambiesoft");
+            sb.AppendLine("https://github.com/ambiesoft/magicfile");
 
-            sb.AppendLine();
+            
             sb.AppendLine();
             sb.AppendLine(
             "This program is free software: you can redistribute it and/or modify" + "\r\n" +
