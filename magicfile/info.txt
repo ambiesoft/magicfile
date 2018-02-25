@@ -1,0 +1,4 @@
+$ cd file
+$ autoreconf -i
+$ ./configure
+$ make

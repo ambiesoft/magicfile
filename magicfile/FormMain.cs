@@ -259,11 +259,11 @@ namespace magicfile
             sb.Append(" ");
             sb.Append("version");
             sb.Append(" ");
-            sb.Append(Assembly.GetExecutingAssembly().GetName().Version.Major.ToString());
-            sb.Append(".");
-            sb.Append(Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString());
+
+            sb.Append(Ambiesoft.AmbLib.getAssemblyVersion(Assembly.GetExecutingAssembly()));
+
             sb.AppendLine();
-            sb.AppendLine("Copyright 2017 Ambiesoft");
+            sb.AppendLine(Ambiesoft.AmbLib.getAssemblyCopyright(Assembly.GetExecutingAssembly()));// "Copyright 2017 Ambiesoft");
             sb.AppendLine("https://github.com/ambiesoft/magicfile");
 
             

@@ -47,6 +47,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -57,6 +58,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ambiesoft.AmbLib">
+      <HintPath>..\..\..\..\..\..\..\Linkout\DNAssembly.NET4\Ambiesoft.AmbLib.dll</HintPath>
+    </Reference>
     <Reference Include="Ambiesoft.AmbLibcpp">
       <HintPath>C:\Linkout\DNAssembly.NET4\Ambiesoft.AmbLibcpp.dll</HintPath>
     </Reference>
@@ -149,15 +153,25 @@
     <PostBuildEvent>mkdir "$(TargetDir)routines"
 REM xcopy /y /e /h $(SolutionDir)$(TargetName)\routines\*.* "$(TargetDir)routines\"
 
-xcopy /f /y "$(SolutionDir)file\out\bin\file.exe" "$(TargetDir)routines\"
-xcopy /f /y "$(SolutionDir)file\out\bin\libmagic-1.dll" "$(TargetDir)routines\"
-xcopy /f /y "C:\local\msys\mingw32\bin\libgcc_s_dw2-1.dll" "$(TargetDir)routines\"
-xcopy /f /y "C:\local\msys\mingw32\bin\libiconv-2.dll" "$(TargetDir)routines\"
-xcopy /f /y "C:\local\msys\mingw32\bin\libintl-8.dll" "$(TargetDir)routines\"
-xcopy /f /y "C:\local\msys\mingw32\bin\libsystre-0.dll" "$(TargetDir)routines\"
-xcopy /f /y "C:\local\msys\mingw32\bin\libtre-5.dll" "$(TargetDir)routines\"
-xcopy /f /y "C:\local\msys\mingw32\bin\libwinpthread-1.dll" "$(TargetDir)routines\"
-xcopy /f /y "$(SolutionDir)file\out\share\misc\magic.mgc" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "$(SolutionDir)file\src\file.exe" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "$(SolutionDir)file\src\.libs\libmagic-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libgcc_s_dw2-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libiconv-2.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libintl-8.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libsystre-0.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libtre-5.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libwinpthread-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "$(SolutionDir)file\magic\magic.mgc" "$(TargetDir)routines\"
+
+copy C:\Linkout\routines\cyggcc_s-1.dll "$(TargetDir)routines\"
+copy C:\Linkout\routines\cygmagic-1.dll "$(TargetDir)routines\"
+copy C:\Linkout\routines\cygwin1.dll "$(TargetDir)routines\"
+copy C:\Linkout\routines\cygz.dll "$(TargetDir)routines\"
+copy C:\Linkout\routines\file.exe "$(TargetDir)routines\"
+copy C:\Linkout\routines\magic.mgc "$(TargetDir)routines\"
+copy C:\Linkout\routines\mime.txt "$(TargetDir)routines\"
+
+
 xcopy /f /y "$(ProjectDir)mime.txt" "$(TargetDir)routines\"
 
 REM
