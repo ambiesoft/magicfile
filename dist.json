@@ -15,7 +15,7 @@
     "remotedir": "http://ambiesoft.fam.cx/ffdav/uploads/magicfile/",
     "remotesha1" : "http://ambiesoft.fam.cx/ffdav/uploads/getSha1.php?file=magicfile/{}",
     
-    "TotalFileCount": 22,
+    "TotalFileCount": 23,
     
     "ShouldNotBeFiles": [
     ],
