@@ -1,4 +1,7 @@
-﻿2018/02/25 v1.3
+﻿2018/03/11 v1.4
+Change icon
+
+2018/02/25 v1.3
 Add: Add url to Aboutbox
 
 2018/02/18 v1.2

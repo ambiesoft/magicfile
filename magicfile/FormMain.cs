@@ -283,6 +283,8 @@ namespace magicfile
             "along with this program.  If not, see <http://www.gnu.org/licenses/>."
             );
 
+            sb.AppendLine("---");
+            sb.AppendLine("Icons made by Roundicons from www.flaticon.com is licensed by CC 3.0 BY");
             Ambiesoft.CppUtils.CenteredMessageBox(
                 this,
                 sb.ToString(),
