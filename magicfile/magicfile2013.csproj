@@ -122,7 +122,6 @@
     <Content Include="info.txt" />
     <Content Include="License.txt" />
     <Content Include="LicenseOfFile.txt" />
-    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -179,7 +178,8 @@ REM
 REM
 xcopy /f /y $(SolutionDir)$(TargetName)\License.txt $(TargetDir)
 xcopy /f /y $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
-xcopy /f /y $(SolutionDir)$(TargetName)\ReadMe.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)README.md $(TargetDir)
+xcopy /f /y $(SolutionDir)README.jp.md $(TargetDir)
 xcopy /f /y $(SolutionDir)$(TargetName)\History.txt $(TargetDir)
 xcopy /f /y $(SolutionDir)$(TargetName)\COPYING $(TargetDir)
 REM copy /y $(SolutionDir)$(TargetName)\v2v4.exe.config $(TargetDir)\$(TargetFileName).config
