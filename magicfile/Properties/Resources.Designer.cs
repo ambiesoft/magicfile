@@ -70,6 +70,15 @@ namespace magicfile.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to save ini-file..
+        /// </summary>
+        internal static string FAILED_TO_SAVE_INIFILE {
+            get {
+                return ResourceManager.GetString("FAILED_TO_SAVE_INIFILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;{0}&quot; not found..
         /// </summary>
         internal static string INTPUFILE_NOT_FOUND {

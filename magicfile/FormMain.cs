@@ -25,6 +25,8 @@ using System.Diagnostics;
 using System.Threading;
 using System.Reflection;
 
+using Ambiesoft;
+
 namespace magicfile
 {
     public partial class FormMain : Form
@@ -32,7 +34,27 @@ namespace magicfile
         public FormMain()
         {
             InitializeComponent();
-        }
+
+            HashIni ini = Profile.ReadAll(IniFile);
+
+            bool bval;
+            Profile.GetBool("Option", "LocationSaved", false, out bval, ini);
+            if (bval)
+            {
+                int x, y, width, height;
+                Profile.GetInt("Option", "X", this.Location.X, out x, ini);
+                Profile.GetInt("Option", "Y", this.Location.Y, out y, ini);
+
+                Profile.GetInt("Option", "Width", this.Size.Width, out width, ini);
+                Profile.GetInt("Option", "Height", this.Size.Height, out height, ini);
+
+                if(AmbLib.IsRectAppearInScreen(new Rectangle(x,y,width,height)))
+                {
+                    this.StartPosition = FormStartPosition.Manual;
+                    this.Location = new Point(x, y);
+                    this.Size = new Size(width, height);
+                }
+            }                    }
         internal string InputFile;
         private void analyzefile(string filename)
         {
@@ -293,5 +315,27 @@ namespace magicfile
                 MessageBoxIcon.Information);
 
         }
+
+        string IniFile
+        {
+            get
+            {
+                return Path.GetFileNameWithoutExtension(Application.ExecutablePath) + ".ini";
+            }
+        }
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Normal)
+            {
+                HashIni ini = Profile.ReadAll(IniFile);
+
+                Profile.WriteInt("Option", "X", this.Location.X, ini);
+                Profile.WriteInt("Option", "Y", this.Location.Y, ini);
+                Profile.WriteInt("Option", "Width", this.Size.Width, ini);
+                Profile.WriteInt("Option", "Height", this.Size.Height, ini);
+                Profile.WriteBool("Option", "LocationSaved", true, ini);                if(!Profile.WriteAll(ini,IniFile))
+                {
+                    Ambiesoft.CppUtils.Alert(this, Properties.Resources.FAILED_TO_SAVE_INIFILE);
+                }            }        }
     }
 }

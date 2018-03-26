@@ -1,4 +1,7 @@
-﻿2018/03/11 v1.5
+﻿2018/03/26 v1.6
+Save location and size on ini-file.
+
+2018/03/11 v1.5
 Add README.jp.md
 
 2018/03/11 v1.4
