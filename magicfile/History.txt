@@ -1,4 +1,7 @@
-﻿2018/03/26 v1.6
+﻿2018/03/27 v1.7
+Extention can be renamed if the file has no extention.
+
+2018/03/26 v1.6
 Save location and size on ini-file.
 
 2018/03/11 v1.5

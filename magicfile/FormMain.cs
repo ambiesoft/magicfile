@@ -54,7 +54,9 @@ namespace magicfile
                     this.Location = new Point(x, y);
                     this.Size = new Size(width, height);
                 }
-            }                    }
+            }            
+
+        }
         internal string InputFile;
         private void analyzefile(string filename)
         {
@@ -152,8 +154,9 @@ namespace magicfile
 
             string text = txtExt.Text;
             text = text.Split(' ')[0];
-            if( (txtExt.Text.Length != 0 && (string.Compare(text, origExt, true) != 0)) &&
-                !IsWellknownExtension(text))
+            if( string.IsNullOrEmpty(origExt) || ( 
+                (txtExt.Text.Length != 0 && (string.Compare(text, origExt, true) != 0)) &&
+                !IsWellknownExtension(text)))
             {
                 btnChangeExt.Enabled = true;
             }
@@ -333,9 +336,13 @@ namespace magicfile
                 Profile.WriteInt("Option", "Y", this.Location.Y, ini);
                 Profile.WriteInt("Option", "Width", this.Size.Width, ini);
                 Profile.WriteInt("Option", "Height", this.Size.Height, ini);
-                Profile.WriteBool("Option", "LocationSaved", true, ini);                if(!Profile.WriteAll(ini,IniFile))
+                Profile.WriteBool("Option", "LocationSaved", true, ini);
+
+                if(!Profile.WriteAll(ini,IniFile))
                 {
                     Ambiesoft.CppUtils.Alert(this, Properties.Resources.FAILED_TO_SAVE_INIFILE);
-                }            }        }
+                }
+            }
+        }
     }
 }
