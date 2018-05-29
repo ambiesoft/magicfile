@@ -81,6 +81,15 @@ namespace magicfile.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &quot;{0}&quot; not found..
         /// </summary>
+        internal static string FILEEXE_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("FILEEXE_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;{0}&quot; not found..
+        /// </summary>
         internal static string INTPUFILE_NOT_FOUND {
             get {
                 return ResourceManager.GetString("INTPUFILE_NOT_FOUND", resourceCulture);

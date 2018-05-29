@@ -117,19 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="COMMAN_LINE_END_WITH_ERROR" xml:space="preserve">
-    <value>Command line end with an error.</value>
-  </data>
-  <data name="FAILED_TO_SAVE_INIFILE" xml:space="preserve">
-    <value>Failed to save ini-file.</value>
-  </data>
-  <data name="FILEEXE_NOT_FOUND" xml:space="preserve">
-    <value>"{0}" not found.</value>
-  </data>
-  <data name="INTPUFILE_NOT_FOUND" xml:space="preserve">
-    <value>"{0}" not found.</value>
-  </data>
-  <data name="Q_RENAME_EXTENSION" xml:space="preserve">
-    <value>Are you sure to rename extension?</value>
-  </data>
 </root>

@@ -19,6 +19,9 @@ No installation process is required. Extract an archive and launch *magicfile.ex
 3. You can rename file extention if it is not too general one.
 4. You can put a shortcut in *Sendto* folder.
 
+## Donate
+Donation makes our development of software progress. <http://ambiesoft.fam.cx/donate/>
+
 ## Contact
 - Author: Ambiesoft trueff
 - E-mail: ambiesoft.trueff@gmail.com

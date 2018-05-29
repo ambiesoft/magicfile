@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aboutcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aboutcs.Designer.cs">
+      <DependentUpon>Aboutcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Aboutcs.resx">
+      <DependentUpon>Aboutcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.ja-JP.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -166,16 +175,16 @@ REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libtre-5.dll" "$(TargetDir)routi
 REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libwinpthread-1.dll" "$(TargetDir)routines\"
 REM FAIL xcopy /f /y "$(SolutionDir)file\magic\magic.mgc" "$(TargetDir)routines\"
 
-copy C:\Linkout\routines\cyggcc_s-1.dll "$(TargetDir)routines\"
-copy C:\Linkout\routines\cygmagic-1.dll "$(TargetDir)routines\"
-copy C:\Linkout\routines\cygwin1.dll "$(TargetDir)routines\"
-copy C:\Linkout\routines\cygz.dll "$(TargetDir)routines\"
-copy C:\Linkout\routines\file.exe "$(TargetDir)routines\"
-copy C:\Linkout\routines\magic.mgc "$(TargetDir)routines\"
-copy C:\Linkout\routines\mime.txt "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\routines\cyggcc_s-1.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\routines\cygmagic-1.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\routines\cygwin1.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\routines\cygz.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\routines\file.exe "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\routines\magic.mgc "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\routines\mime.txt "$(TargetDir)routines\"
 
 
-xcopy /f /y "$(ProjectDir)mime.txt" "$(TargetDir)routines\"
+REM xcopy /f /y "$(ProjectDir)mime.txt" "$(TargetDir)routines\"
 
 REM
 REM

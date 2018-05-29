@@ -20,6 +20,9 @@ Magicfileはファイルの種類を判定します。
 3. 拡張子をリネームすることもできます。ただし一般的すぎる拡張子にはリネームしません。
 4. *送る*メニューにショートカットファイルを置いてエクスプローラなどから起動することもできます。
 
+## 寄付
+開発のための寄付をお願いします。<http://ambiesoft.fam.cx/donate/>
+
 ## コンタクト
 - 作者: Ambiesoft trueff
 - E-mail: ambiesoft.trueff@gmail.com
