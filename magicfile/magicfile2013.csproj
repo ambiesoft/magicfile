@@ -90,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Aboutcs.ja-JP.resx">
+      <DependentUpon>Aboutcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Aboutcs.resx">
       <DependentUpon>Aboutcs.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,8 +117,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
-    <None Include="COPYING" />
+    <None Include="dist\COPYING" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,13 +130,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7zlist.lst" />
-    <Content Include="file.help.txt" />
-    <Content Include="History.txt" />
+    <Content Include="info\file.help.txt" />
+    <Content Include="dist\History.txt" />
     <Content Include="icon.ico" />
-    <Content Include="info.txt" />
-    <Content Include="License.txt" />
-    <Content Include="LicenseOfFile.txt" />
+    <Content Include="info\info.txt" />
+    <Content Include="dist\License.txt" />
+    <Content Include="dist\LicenseOfFile.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -153,6 +154,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -189,13 +191,13 @@ REM xcopy /f /y "$(ProjectDir)mime.txt" "$(TargetDir)routines\"
 REM
 REM
 REM
-xcopy /f /y $(SolutionDir)$(TargetName)\License.txt $(TargetDir)
-xcopy /f /y $(SolutionDir)$(TargetName)\LicenseOfFile.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)$(TargetName)\dist\License.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)$(TargetName)\dist\LicenseOfFile.txt $(TargetDir)
 xcopy /f /y $(SolutionDir)README.md $(TargetDir)
 xcopy /f /y $(SolutionDir)README.jp.md $(TargetDir)
-xcopy /f /y $(SolutionDir)$(TargetName)\History.txt $(TargetDir)
-xcopy /f /y $(SolutionDir)$(TargetName)\COPYING $(TargetDir)
-REM copy /y $(SolutionDir)$(TargetName)\v2v4.exe.config $(TargetDir)\$(TargetFileName).config
+xcopy /f /y $(SolutionDir)$(TargetName)\dist\History.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)$(TargetName)\dist\COPYING $(TargetDir)
+copy /y $(SolutionDir)$(TargetName)\v2v4.exe.config $(TargetDir)$(TargetFileName).config
 
 
 REM cd $(ProjectDir)

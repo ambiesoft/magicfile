@@ -1,4 +1,8 @@
-﻿2018/03/27 v1.7
+﻿2018/05/29 v1.8
+Update file.exe
+Add About dialog
+
+2018/03/27 v1.7
 Extention can be renamed if the file has no extention.
 
 2018/03/26 v1.6
