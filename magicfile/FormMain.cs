@@ -313,7 +313,10 @@ namespace magicfile
         {
             get
             {
-                return Path.GetFileNameWithoutExtension(Application.ExecutablePath) + ".ini";
+                return (Path.Combine(
+                    Path.GetDirectoryName(Application.ExecutablePath), // directory
+                    Path.GetFileNameWithoutExtension(Application.ExecutablePath) + ".ini"));
+                // return Path.GetFileNameWithoutExtension(Application.ExecutablePath) + ".ini";
             }
         }
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
