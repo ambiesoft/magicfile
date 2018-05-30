@@ -1,4 +1,7 @@
-﻿2018/05/29 v1.8
+﻿2018/05/30 v1.9
+Fix: Revert Degraded cygwin file.exe
+
+2018/05/29 v1.8
 Update file.exe
 Add About dialog
 

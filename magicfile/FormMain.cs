@@ -58,29 +58,53 @@ namespace magicfile
 
         }
         internal string InputFile;
+
+        private bool createFileProcessGetResult(string app, string arg,
+            out string output, out int exitCode)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = app;
+            psi.Arguments = arg;
+            psi.RedirectStandardOutput = true;
+            psi.UseShellExecute = false;
+            psi.CreateNoWindow = true;
+            // psi.WorkingDirectory = fi.Directory.FullName;
+            Process p = Process.Start(psi);
+            string outputTemp = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
+            exitCode = p.ExitCode;
+            output = outputTemp;
+            return true;
+        }
         private void analyzefile(string filename)
         {
             string origExt = string.Empty;
+            string fileexefull = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath),
+                "routines", "file.exe");
+            string magicfilefull = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath),
+                "routines", "magic.mgc");
+            if(!File.Exists(fileexefull))
+            {
+                MessageBox.Show(string.Format(Properties.Resources.FILEEXE_NOT_FOUND, fileexefull),
+                    Application.ProductName,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            // string filenameshort = Ambiesoft.CppUtils.GetShortFileName(filename);
+
             try
             {
                 txtFile.Text = filename;
-                FileInfo fi = new FileInfo(filename);
-                FileInfo fiapp = new FileInfo(System.Windows.Forms.Application.ExecutablePath);
                 origExt = Path.GetExtension(filename).Trim('.');
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo();
-                    psi.FileName = fiapp.Directory.FullName + "\\routines\\file.exe";
-                    psi.Arguments = "-b -m " + "\"" + fiapp.Directory.FullName + "\\routines\\magic.mgc\" " + "\"" + fi.FullName + "\"";
-                    psi.RedirectStandardOutput = true;
-                    psi.UseShellExecute = false;
-                    psi.CreateNoWindow = true;
-                    // psi.WorkingDirectory = fi.Directory.FullName;
-                    Process p = Process.Start(psi);
-                    string output = p.StandardOutput.ReadToEnd();
-                    p.WaitForExit();
-                    if (0 != p.ExitCode)
+                    string arg = "-b -m " + "\"" + magicfilefull + "\" " + "\"" + filename + "\"";
+                    string output;
+                    int exitCode;
+                    if(!createFileProcessGetResult(fileexefull, arg, out output, out exitCode) || exitCode != 0)
                     {
-                        MessageBox.Show(string.Format(Properties.Resources.COMMAN_LINE_END_WITH_ERROR + "\r\n" + "error:{0}", p.ExitCode),
+                        MessageBox.Show(
+                            string.Format(Properties.Resources.COMMAN_LINE_END_WITH_ERROR + "\r\n" + "error:{0}", exitCode),
                             Application.ProductName,
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
@@ -91,19 +115,12 @@ namespace magicfile
                     txtMagic.Text = output;
                 }
                 {
-                    ProcessStartInfo psi = new ProcessStartInfo();
-                    psi.FileName = fiapp.Directory.FullName + "\\routines\\file.exe";
-                    psi.Arguments = "-b --mime-type -m " + "\"" + fiapp.Directory.FullName + "\\routines\\magic.mgc\" " + "\"" + fi.FullName + "\"";
-                    psi.RedirectStandardOutput = true;
-                    psi.UseShellExecute = false;
-                    psi.CreateNoWindow = true;
-                    // psi.WorkingDirectory = fi.Directory.FullName;
-                    Process p = Process.Start(psi);
-                    string output = p.StandardOutput.ReadToEnd();
-                    p.WaitForExit();
-                    if (0 != p.ExitCode)
+                    string arg = "-b --mime-type -m " + "\"" + magicfilefull + "\" " + "\"" + filename + "\"";
+                    string output;
+                    int exitCode;
+                    if (!createFileProcessGetResult(fileexefull, arg, out output, out exitCode) || exitCode != 0)
                     {
-                        MessageBox.Show(string.Format("error:{0}", p.ExitCode));
+                        MessageBox.Show(string.Format("error:{0}", exitCode));
                         return;
                     }
                     output = output.Trim();
