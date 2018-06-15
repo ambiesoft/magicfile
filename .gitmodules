@@ -1,5 +1,0 @@
-[submodule "file"]
-	path = file
-	url = https://github.com/file/file.git
-	ignore = dirty
-
