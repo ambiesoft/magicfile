@@ -1,4 +1,7 @@
-﻿2018/05/30 v1.10
+﻿2018/06/15 v1.11
+Update file
+
+2018/05/30 v1.10
 Location of magicfile.ini was not full path, so that it was created on the current directory.
 
 2018/05/30 v1.9
