@@ -29,6 +29,8 @@ namespace magicfile
         [STAThread]
         static void Main(string[] args)
         {
+            Ambiesoft.CppUtils.AmbSetProcessDPIAware();
+
             thread_ = new Thread(new ThreadStart(theOtherWork));
             thread_.Start();
             Application.EnableVisualStyles();
