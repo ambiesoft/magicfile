@@ -34,7 +34,7 @@
             this.txtMagic = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.txtFile = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblFile = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,10 +75,10 @@
             this.txtFile.Name = "txtFile";
             this.txtFile.ReadOnly = true;
             // 
-            // label1
+            // lblFile
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblFile, "lblFile");
+            this.lblFile.Name = "lblFile";
             // 
             // label2
             // 
@@ -128,7 +128,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblFile);
             this.Controls.Add(this.txtFile);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtExt);
@@ -136,6 +136,7 @@
             this.Controls.Add(this.txtMagic);
             this.MaximizeBox = false;
             this.Name = "FormMain";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.FormMain_DragDrop);
@@ -153,7 +154,7 @@
         private System.Windows.Forms.TextBox txtMime;
         private System.Windows.Forms.TextBox txtMagic;
         private System.Windows.Forms.TextBox txtFile;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

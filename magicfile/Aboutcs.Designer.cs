@@ -54,8 +54,8 @@
             // 
             // tbMagicFile
             // 
-            resources.ApplyResources(this.tbMagicFile, "tbMagicFile");
             this.tbMagicFile.Controls.Add(this.txtMagicFile);
+            resources.ApplyResources(this.tbMagicFile, "tbMagicFile");
             this.tbMagicFile.Name = "tbMagicFile";
             this.tbMagicFile.UseVisualStyleBackColor = true;
             // 
@@ -67,8 +67,8 @@
             // 
             // tbFile
             // 
-            resources.ApplyResources(this.tbFile, "tbFile");
             this.tbFile.Controls.Add(this.txtFile);
+            resources.ApplyResources(this.tbFile, "tbFile");
             this.tbFile.Name = "tbFile";
             this.tbFile.UseVisualStyleBackColor = true;
             // 
@@ -80,8 +80,8 @@
             // 
             // tbDonate
             // 
-            resources.ApplyResources(this.tbDonate, "tbDonate");
             this.tbDonate.Controls.Add(this.txtDonate);
+            resources.ApplyResources(this.tbDonate, "tbDonate");
             this.tbDonate.Name = "tbDonate";
             this.tbDonate.UseVisualStyleBackColor = true;
             // 

@@ -18,16 +18,19 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using System.Diagnostics;
+
+using Ambiesoft;
 
 namespace magicfile
 {
     static class Program
     {
         /// <summary>
-        /// アプリケーションのメイン エントリ ポイントです。
+        /// 
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             Ambiesoft.CppUtils.AmbSetProcessDPIAware();
 
@@ -38,19 +41,34 @@ namespace magicfile
 
 
             FormMain f = new FormMain();
-            if (args.Length >= 1)
+            if (args.Length == 1)
             {
-                if(!File.Exists(args[0]))
-                {
-                    MessageBox.Show(string.Format(Properties.Resources.INTPUFILE_NOT_FOUND, args[0]),
-                        Application.ProductName,
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    return;
-                }
                 f.InputFile = args[0];
             }
+            else if (args.Length > 1)
+            {
+                foreach (string arg in args)
+                {
+                    if (!File.Exists(arg))
+                    {
+                        CppUtils.Fatal(string.Format(Properties.Resources.INTPUFILE_NOT_FOUND, args[0]));
+                        continue;
+                    }
+
+                    try
+                    {
+                        Process.Start(Application.ExecutablePath, arg);
+                    }
+                    catch (Exception ex)
+                    {
+                        CppUtils.Alert(ex);
+                        continue;
+                    }
+                }
+                return 0;
+            }
             Application.Run(f);
+            return 0;
         }
         internal static Thread thread_;
         static System.Collections.Generic.Dictionary<string,string> dic_ = new Dictionary<string,string>();

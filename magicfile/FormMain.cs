@@ -57,7 +57,16 @@ namespace magicfile
             }            
 
         }
-        internal string InputFile;
+
+        private string _inputFile;
+        internal string InputFile
+        {
+            get { return _inputFile; }
+            set {
+                _inputFile = value;
+                this.Text = Path.GetFileName(_inputFile) + " - " + Application.ProductName;
+            }
+        }
 
         private bool createFileProcessGetResult(string app, string arg,
             out string output, out int exitCode)
@@ -233,7 +242,9 @@ namespace magicfile
         private void FormMain_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(InputFile))
+            {
                 analyzefile(InputFile);
+            }
         }
 
         // private readonly List<string> generalExt_ = new List<string>( "bin","txt","xml");

@@ -59,14 +59,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ambiesoft.AmbLib">
-      <HintPath>..\..\..\..\..\..\..\Linkout\DNAssembly.NET4\Ambiesoft.AmbLib.dll</HintPath>
+      <HintPath>C:\Linkout\DNAssembly.NET4\Ambiesoft.AmbLib.dll</HintPath>
     </Reference>
     <Reference Include="Ambiesoft.AmbLibcpp">
       <HintPath>C:\Linkout\DNAssembly.NET4\Ambiesoft.AmbLibcpp.dll</HintPath>
     </Reference>
     <Reference Include="Ambiesoft.Profile, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Linkout\DNAssembly.NET4\Ambiesoft.Profile.dll</HintPath>
+      <HintPath>C:\Linkout\DNAssembly.NET4\Ambiesoft.Profile.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -204,7 +204,7 @@ xcopy /f /y $(SolutionDir)README.md $(TargetDir)
 xcopy /f /y $(SolutionDir)README.jp.md $(TargetDir)
 xcopy /f /y $(SolutionDir)$(TargetName)\dist\History.txt $(TargetDir)
 xcopy /f /y $(SolutionDir)$(TargetName)\dist\COPYING $(TargetDir)
-copy /y $(SolutionDir)$(TargetName)\v2v4.exe.config $(TargetDir)$(TargetFileName).config
+REM copy /y $(SolutionDir)$(TargetName)\v2v4.exe.config $(TargetDir)$(TargetFileName).config
 
 
 REM cd $(ProjectDir)

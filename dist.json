@@ -1,26 +1,50 @@
 {
 	"name": "magicfile",
-	"solution": "magicfile2013.sln",
-	"targetproject": "magicfile2013",
+	"solution": "magicfile.sln",
+	"targetproject": "magicfile",
 	"configuration": "Release",
     "targets": [
             {
             	"setoutdirforbuild": true,
-                "outdir" : "C:/Linkout/magicfile/",
-                "platform":"Any CPU",
-                "setoutdirforbuild": true
+                "outdir" : "build/MagicFile",
+                "platform":"Any CPU"
             }
     ],
     "archivedir": "C:/Linkout/",
     "remotedir": "http://ambiesoft.fam.cx/ffdav/uploads/magicfile/",
     "remotesha1" : "http://ambiesoft.fam.cx/ffdav/uploads/getSha1.php?file=magicfile/{}",
     
-    "TotalFileCount": 25,
+    "TotalFileCount": "exact",
     
+    "ShouldBeFiles": [
+        "Ambiesoft.AmbLib.dll",
+        "Ambiesoft.AmbLib.pdb",
+        "Ambiesoft.AmbLibcpp.dll",
+        "Ambiesoft.AmbLibcpp.pdb",
+        "Ambiesoft.Profile.dll",
+        "Ambiesoft.Profile.pdb",
+        "COPYING",
+        "History.txt",
+        "License.txt",
+        "LicenseOfFile.txt",
+        "magicfile.exe",
+        "magicfile.pdb",
+        "README.jp.md",
+        "README.md",
+        "ja-JP\\magicfile.resources.dll",
+        "routines\\file.exe",
+        "routines\\libgcc_s_dw2-1.dll",
+        "routines\\libiconv-2.dll",
+        "routines\\libintl-8.dll",
+        "routines\\libsystre-0.dll",
+        "routines\\libtre-5.dll",
+        "routines\\libwinpthread-1.dll",
+        "routines\\magic.mgc",
+        "routines\\mime.txt"
+    ],
     "ShouldNotBeFiles": [
     ],
     
-    "ShouldBeFiles": [],
     "ShouldBeOneOfThem": [],
     
     "obtainverfrom": "History.txt",
