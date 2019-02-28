@@ -26,7 +26,7 @@ namespace magicfile
                 sb.Append("version");
                 sb.Append(" ");
 
-                sb.Append(Ambiesoft.AmbLib.getAssemblyVersion(Assembly.GetExecutingAssembly()));
+                sb.Append(Ambiesoft.AmbLib.getAssemblyVersion(Assembly.GetExecutingAssembly(),3));
 
                 sb.AppendLine();
                 sb.AppendLine(Ambiesoft.AmbLib.getAssemblyCopyright(Assembly.GetExecutingAssembly()));// "Copyright 2017 Ambiesoft");
@@ -66,7 +66,7 @@ namespace magicfile
                     int retval;
                     string output, error;
                     string arg = "--version";
-                    sb.AppendLine(">" + Ambiesoft.AmbLib.doubleQuoteIfSpace(fileexe) + " " + arg);
+                    sb.AppendLine("> " + Ambiesoft.AmbLib.doubleQuoteIfSpace(fileexe) + " " + arg);
                     Ambiesoft.AmbLib.OpenCommandGetResult(fileexe,
                         arg,
                         Encoding.UTF8,
@@ -74,7 +74,7 @@ namespace magicfile
                         out output,
                         out error);
                     sb.AppendLine(output);
-                    sb.AppendLine(">");
+                    sb.AppendLine("> ");
                     txtFile.Text = sb.ToString();
                 }
                 else
