@@ -5,7 +5,7 @@ Magicfileはファイルの種類を判定します。
 バイナリはここからダウンロードできます。 <https://github.com/ambiesoft/magicfile/releases>.
 
 ## 環境
-.Net 4以上とVisual C++ 2013ランタイムライブラリが必要です。
+.Net 4.0以上が必要です。
 
 ## ライセンス
 このソフトはフリーウェアです。GPLv3でライセンスされます。

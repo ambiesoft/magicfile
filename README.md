@@ -5,7 +5,7 @@ Magicfile is a .Net application which can identify a file from its content by us
 Binary files can be download from <https://github.com/ambiesoft/magicfile/releases>.
 
 ## Requirements
-.Net 4 or above and Visual C++ 2013 runtime library must be installed in Windows.
+.Net 4.0 or above.
 
 ## License
 This software is freeware licensed under GPLv3.
