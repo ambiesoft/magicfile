@@ -1,10 +1,12 @@
 *.user
 *.suo
+*.sdf
 
 magicfile/bin/
 magicfile/obj/
 
 
 build/
+Release/
 .*~
 

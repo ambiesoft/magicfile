@@ -1,7 +1,7 @@
 {
 	"name": "magicfile",
 	"solution": "magicfile.sln",
-	"targetproject": "magicfile",
+	"targetproject": "zzzDist",
 	"configuration": "Release",
     "targets": [
             {
@@ -40,7 +40,8 @@
         "routines\\libtre-5.dll",
         "routines\\libwinpthread-1.dll",
         "routines\\magic.mgc",
-        "routines\\mime.txt"
+        "routines\\mime.txt",
+        "msvcp120.dll", "msvcr120.dll", "vccorlib120.dll"
     ],
     "ShouldNotBeFiles": [
     ],
