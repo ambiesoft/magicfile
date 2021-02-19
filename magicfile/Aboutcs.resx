@@ -139,7 +139,7 @@
     <value>Vertical</value>
   </data>
   <data name="txtMagicFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 289</value>
+    <value>365, 263</value>
   </data>
   <data name="txtMagicFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -157,13 +157,13 @@
     <value>0</value>
   </data>
   <data name="tbMagicFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 24</value>
   </data>
   <data name="tbMagicFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tbMagicFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 289</value>
+    <value>365, 263</value>
   </data>
   <data name="tbMagicFile.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -199,7 +199,7 @@
     <value>Vertical</value>
   </data>
   <data name="txtFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 289</value>
+    <value>365, 265</value>
   </data>
   <data name="txtFile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -223,7 +223,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tbFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 289</value>
+    <value>365, 265</value>
   </data>
   <data name="tbFile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -253,7 +253,7 @@
     <value>True</value>
   </data>
   <data name="txtDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 289</value>
+    <value>365, 265</value>
   </data>
   <data name="txtDonate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -280,7 +280,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tbDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 289</value>
+    <value>365, 265</value>
   </data>
   <data name="tbDonate.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -301,7 +301,7 @@
     <value>2</value>
   </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+    <value>12, 11</value>
   </data>
   <data name="tabControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -310,7 +310,7 @@
     <value>0, 0</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 315</value>
+    <value>373, 291</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -331,10 +331,10 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 337</value>
+    <value>306, 311</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>75, 21</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -358,13 +358,16 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>397, 372</value>
+    <value>397, 343</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Meiryo UI, 9pt</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>250, 268</value>
+    <value>250, 250</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

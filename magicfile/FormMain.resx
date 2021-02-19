@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txtExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 122</value>
+    <value>87, 113</value>
   </data>
   <data name="txtExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 20</value>
+    <value>369, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtExt.TabIndex" type="System.Int32, mscorlib">
@@ -148,10 +148,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="txtMime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 95</value>
+    <value>87, 88</value>
   </data>
   <data name="txtMime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 20</value>
+    <value>369, 23</value>
   </data>
   <data name="txtMime.TabIndex" type="System.Int32, mscorlib">
     <value>700</value>
@@ -172,10 +172,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="txtMagic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 68</value>
+    <value>87, 63</value>
   </data>
   <data name="txtMagic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 20</value>
+    <value>369, 23</value>
   </data>
   <data name="txtMagic.TabIndex" type="System.Int32, mscorlib">
     <value>500</value>
@@ -196,10 +196,10 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>376, 165</value>
+    <value>376, 152</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 25</value>
+    <value>80, 23</value>
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>1200</value>
@@ -223,10 +223,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="txtFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 26</value>
+    <value>12, 24</value>
   </data>
   <data name="txtFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 20</value>
+    <value>408, 23</value>
   </data>
   <data name="txtFile.TabIndex" type="System.Int32, mscorlib">
     <value>200</value>
@@ -247,10 +247,10 @@
     <value>True</value>
   </data>
   <data name="lblFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 10</value>
+    <value>10, 9</value>
   </data>
   <data name="lblFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 13</value>
+    <value>27, 15</value>
   </data>
   <data name="lblFile.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
@@ -274,10 +274,10 @@
     <value>True</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 72</value>
+    <value>10, 66</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
+    <value>45, 15</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>400</value>
@@ -301,10 +301,10 @@
     <value>True</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 99</value>
+    <value>10, 91</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>71, 15</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>600</value>
@@ -328,10 +328,10 @@
     <value>True</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 126</value>
+    <value>10, 116</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>71, 15</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>800</value>
@@ -355,10 +355,10 @@
     <value>Top, Right</value>
   </data>
   <data name="btnNavigate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 26</value>
+    <value>426, 24</value>
   </data>
   <data name="btnNavigate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 21</value>
+    <value>30, 19</value>
   </data>
   <data name="btnNavigate.TabIndex" type="System.Int32, mscorlib">
     <value>300</value>
@@ -385,10 +385,10 @@
     <value>False</value>
   </data>
   <data name="btnChangeExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>206, 165</value>
+    <value>206, 152</value>
   </data>
   <data name="btnChangeExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 25</value>
+    <value>164, 23</value>
   </data>
   <data name="btnChangeExt.TabIndex" type="System.Int32, mscorlib">
     <value>1100</value>
@@ -412,10 +412,10 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 165</value>
+    <value>12, 152</value>
   </data>
   <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 25</value>
+    <value>75, 23</value>
   </data>
   <data name="btnAbout.TabIndex" type="System.Int32, mscorlib">
     <value>1000</value>
@@ -439,10 +439,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>468, 202</value>
+    <value>468, 186</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Meiryo UI, 9pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -9828,7 +9831,7 @@
 </value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>372, 233</value>
+    <value>372, 218</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>MagicFile</value>
