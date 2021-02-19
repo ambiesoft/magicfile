@@ -9,5 +9,6 @@ magicfile/obj/
 
 build/
 Release/
+Debug/
 .*~
 

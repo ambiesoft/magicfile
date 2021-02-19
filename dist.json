@@ -1,6 +1,7 @@
 {
 	"name": "magicfile",
 	"solution": "magicfile.sln",
+	"targetproj": "zzzDist",
 	"configuration": "Release",
     "targets": [
             {
