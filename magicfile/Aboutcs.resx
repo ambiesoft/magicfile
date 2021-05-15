@@ -259,7 +259,7 @@
     <value>1</value>
   </data>
   <data name="txtDonate.Text" xml:space="preserve">
-    <value>Donation helps develop our software. See http://ambiesoft.fam.cx/donate/</value>
+    <value>Donation helps develop our software. See https://ambiesoft.github.io/webjumper/?target=donate</value>
   </data>
   <data name="&gt;&gt;txtDonate.Name" xml:space="preserve">
     <value>txtDonate</value>

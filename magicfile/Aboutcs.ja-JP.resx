@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="txtDonate.Text" xml:space="preserve">
-    <value>ソフトウェア開発のための寄付を募集しています。http://ambiesoft.fam.cx/donate/
+    <value>ソフトウェア開発のための寄付を募集しています。https://ambiesoft.github.io/webjumper/?target=donate
  を御覧ください。</value>
   </data>
   <data name="tbDonate.Text" xml:space="preserve">
