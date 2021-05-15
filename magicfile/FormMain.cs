@@ -249,12 +249,12 @@ namespace magicfile
         }
 
         // private readonly List<string> generalExt_ = new List<string>( "bin","txt","xml");
-        OrignalFile _beforeChangedFile = new OrignalFile();
+
         private void btnChangeExt_Click(object sender, EventArgs e)
         {
             try
             {
-                if (_beforeChangedFile.IsEmpty)
+                
                 {
                     string src = InputFile;
                     FileInfo srcinfo = new FileInfo(src);
@@ -279,17 +279,8 @@ namespace magicfile
                     }
 
                     srcinfo.MoveTo(dstname);
-                    _beforeChangedFile.Set(InputFile, new StreamReader(dstname));
                     InputFile = dstname;
                     analyzefile(dstname);
-                }
-                else
-                {
-                    _beforeChangedFile.Unlock();
-                    System.IO.File.Move(InputFile, _beforeChangedFile.Name);
-                    InputFile = _beforeChangedFile.Name;
-                    _beforeChangedFile.Clear();
-                    analyzefile(InputFile);
                 }
             }
             catch (Exception ex)
@@ -343,11 +334,6 @@ namespace magicfile
                     Ambiesoft.CppUtils.Alert(this, Properties.Resources.FAILED_TO_SAVE_INIFILE);
                 }
             }
-        }
-
-        private void txtFile_TextChanged(object sender, EventArgs e)
-        {
-            _beforeChangedFile.Clear();
         }
     }
 }
