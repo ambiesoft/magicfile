@@ -74,6 +74,7 @@
             resources.ApplyResources(this.txtFile, "txtFile");
             this.txtFile.Name = "txtFile";
             this.txtFile.ReadOnly = true;
+            this.txtFile.TextChanged += new System.EventHandler(this.txtFile_TextChanged);
             // 
             // lblFile
             // 

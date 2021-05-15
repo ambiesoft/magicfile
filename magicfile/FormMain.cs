@@ -181,7 +181,8 @@ namespace magicfile
             string text = txtExt.Text;
             text = text.Split(' ')[0];
             if( string.IsNullOrEmpty(origExt) || ( 
-                (txtExt.Text.Length != 0 && (string.Compare(text, origExt, true) != 0)) &&
+                (txtExt.Text.Length != 0 &&
+                (string.Compare(text, origExt, true) != 0)) &&
                 !IsWellknownExtension(text)))
             {
                 btnChangeExt.Enabled = true;
@@ -248,13 +249,12 @@ namespace magicfile
         }
 
         // private readonly List<string> generalExt_ = new List<string>( "bin","txt","xml");
-        private string beforeChangeFilename;
-        System.IO.StreamReader srBeforeChangeFile;
+        OrignalFile _beforeChangedFile = new OrignalFile();
         private void btnChangeExt_Click(object sender, EventArgs e)
         {
             try
             {
-                if (string.IsNullOrEmpty(beforeChangeFilename))
+                if (_beforeChangedFile.IsEmpty)
                 {
                     string src = InputFile;
                     FileInfo srcinfo = new FileInfo(src);
@@ -279,21 +279,17 @@ namespace magicfile
                     }
 
                     srcinfo.MoveTo(dstname);
-                    beforeChangeFilename = InputFile;
-                    srBeforeChangeFile = new StreamReader(dstname);
+                    _beforeChangedFile.Set(InputFile, new StreamReader(dstname));
                     InputFile = dstname;
                     analyzefile(dstname);
-                    /// btnChangeExt.Text = "bbb";
                 }
                 else
                 {
-                    srBeforeChangeFile.Close();
-                    srBeforeChangeFile = null;
-                    System.IO.File.Move(InputFile, beforeChangeFilename);
-                    InputFile = beforeChangeFilename;
-                    beforeChangeFilename = null;
+                    _beforeChangedFile.Unlock();
+                    System.IO.File.Move(InputFile, _beforeChangedFile.Name);
+                    InputFile = _beforeChangedFile.Name;
+                    _beforeChangedFile.Clear();
                     analyzefile(InputFile);
-                    /// btnChangeExt.Text = "bbb";
                 }
             }
             catch (Exception ex)
@@ -347,6 +343,11 @@ namespace magicfile
                     Ambiesoft.CppUtils.Alert(this, Properties.Resources.FAILED_TO_SAVE_INIFILE);
                 }
             }
+        }
+
+        private void txtFile_TextChanged(object sender, EventArgs e)
+        {
+            _beforeChangedFile.Clear();
         }
     }
 }
