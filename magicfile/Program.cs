@@ -76,19 +76,50 @@ namespace magicfile
         {
             try
             {
-                FileInfo fi = new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
-                string file = fi.Directory.FullName + "\\routines" + "\\mime.txt";
+                FileInfo fiMime = new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                string folderRoutime = fiMime.Directory.FullName + "\\routines\\";
+                string fileMime =  folderRoutime + "mime.txt";
             
-                using (StreamReader sr = new StreamReader(file))
+                using (StreamReader srMime = new StreamReader(fileMime))
                 {
                     string line;
-                    while ((line = sr.ReadLine()) != null)
+                    while ((line = srMime.ReadLine()) != null)
                     {
                         string[] seped = line.Split(' ');
                         if (seped.Length > 1)
                         {
                             dic_.Add(seped[0], seped[1]);
                         }
+                    }
+                }
+
+                // extra
+                string fileExtra = folderRoutime + "extramime.txt";
+
+                using (StreamReader srExtra = new StreamReader(fileExtra))
+                {
+                    string line;
+                    while ((line = srExtra.ReadLine()) != null)
+                    {
+                        line = line.Trim();
+                        if (string.IsNullOrEmpty(line) || line[0] == '#')
+                            continue;
+
+                        string[] septab = line.Split('\t');
+                        if (septab.Length < 2)
+                            continue;
+
+                        string mime = septab[0];
+                        if (dic_.ContainsKey(mime))
+                            continue;
+                        
+                        string[] exts = septab[1].Split(' ');
+                        if (exts.Length < 1)
+                            continue;
+
+                        string ext = exts[0];
+                        
+                        dic_.Add(mime, ext);
                     }
                 }
             }

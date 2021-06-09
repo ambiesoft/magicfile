@@ -42,11 +42,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\MagicFile\</OutDir>
+    <OutDir>$(SolutionDir)magicfile\bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\MagicFile\</OutDir>
+    <OutDir>$(SolutionDir)magicfile\bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -61,7 +61,45 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>del "$(OutDir)zzzDist.*"
+      <Command>mkdir "$(TargetDir)routines"
+REM xcopy /y /e /h $(SolutionDir)magicfile\routines\*.* "$(TargetDir)routines\"
+
+REM FAIL xcopy /f /y "$(SolutionDir)file\src\file.exe" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "$(SolutionDir)file\src\.libs\libmagic-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libgcc_s_dw2-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libiconv-2.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libintl-8.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libsystre-0.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libtre-5.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libwinpthread-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "$(SolutionDir)file\magic\magic.mgc" "$(TargetDir)routines\"
+
+REM xcopy /f /y C:\Linkout\routines\cyggcc_s-1.dll "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\cygmagic-1.dll "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\cygwin1.dll "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\cygz.dll "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\file.exe "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\magic.mgc "$(TargetDir)routines\"
+
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libsystre-0.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libtre-5.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libwinpthread-1.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\magic.mgc "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\file.exe "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libgcc_s_dw2-1.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libiconv-2.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libintl-8.dll "$(TargetDir)routines\"
+
+xcopy /f /y C:\Linkout\routines\mime.txt "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)magicfile\dist\extramime.txt" "$(TargetDir)routines\"
+xcopy /f /y $(SolutionDir)magicfile\dist\License.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)magicfile\dist\LicenseOfFile.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)README.md $(TargetDir)
+xcopy /f /y $(SolutionDir)README.jp.md $(TargetDir)
+xcopy /f /y $(SolutionDir)magicfile\dist\History.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)magicfile\dist\COPYING $(TargetDir)
+REM copy /y $(SolutionDir)magicfile\v2v4.exe.config $(TargetDir)$(TargetFileName).config
+
 
 C:\LegacyPrograms\FFC\FFC.exe /t12 "$(UniversalCRTSdkDir)Redist\$(TargetPlatformVersion)\ucrt\DLLs\$(PlatformTarget)\*" /to:"$(OutDir)"
 dir /B /s "$(UniversalCRTSdkDir)Redist\$(TargetPlatformVersion)\ucrt\DLLs\$(PlatformTarget)\" &gt;&gt; "$(OutDir)RedistCopied.txt"
@@ -69,7 +107,7 @@ dir /B /s "$(UniversalCRTSdkDir)Redist\$(TargetPlatformVersion)\ucrt\DLLs\$(Plat
 C:\LegacyPrograms\FFC\FFC.exe /t12 "$(VCInstallDir)Redist\MSVC\$(VCToolsRedistVersion)\$(PlatformTarget)\Microsoft.VC$(PlatformToolsetVersion).CRT\*" /to:"$(OutDir)"
 dir /B /s "$(VCInstallDir)Redist\MSVC\$(VCToolsRedistVersion)\$(PlatformTarget)\Microsoft.VC$(PlatformToolsetVersion).CRT\" &gt;&gt; "$(OutDir)RedistCopied.txt"
 
-</Command>
+del "$(OutDir)zzzDist.*"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -89,7 +127,45 @@ dir /B /s "$(VCInstallDir)Redist\MSVC\$(VCToolsRedistVersion)\$(PlatformTarget)\
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>del "$(OutDir)zzzDist.*"
+      <Command>mkdir "$(TargetDir)routines"
+REM xcopy /y /e /h $(SolutionDir)magicfile\routines\*.* "$(TargetDir)routines\"
+
+REM FAIL xcopy /f /y "$(SolutionDir)file\src\file.exe" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "$(SolutionDir)file\src\.libs\libmagic-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libgcc_s_dw2-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libiconv-2.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libintl-8.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libsystre-0.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libtre-5.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "C:\local\msys\mingw32\bin\libwinpthread-1.dll" "$(TargetDir)routines\"
+REM FAIL xcopy /f /y "$(SolutionDir)file\magic\magic.mgc" "$(TargetDir)routines\"
+
+REM xcopy /f /y C:\Linkout\routines\cyggcc_s-1.dll "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\cygmagic-1.dll "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\cygwin1.dll "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\cygz.dll "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\file.exe "$(TargetDir)routines\"
+REM xcopy /f /y C:\Linkout\routines\magic.mgc "$(TargetDir)routines\"
+
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libsystre-0.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libtre-5.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libwinpthread-1.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\magic.mgc "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\file.exe "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libgcc_s_dw2-1.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libiconv-2.dll "$(TargetDir)routines\"
+xcopy /f /y C:\Linkout\CommonExe\ownbuiltfile\libintl-8.dll "$(TargetDir)routines\"
+
+xcopy /f /y C:\Linkout\routines\mime.txt "$(TargetDir)routines\"
+xcopy /f /y "$(SolutionDir)magicfile\dist\extramime.txt" "$(TargetDir)routines\"
+xcopy /f /y $(SolutionDir)magicfile\dist\License.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)magicfile\dist\LicenseOfFile.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)README.md $(TargetDir)
+xcopy /f /y $(SolutionDir)README.jp.md $(TargetDir)
+xcopy /f /y $(SolutionDir)magicfile\dist\History.txt $(TargetDir)
+xcopy /f /y $(SolutionDir)magicfile\dist\COPYING $(TargetDir)
+REM copy /y $(SolutionDir)magicfile\v2v4.exe.config $(TargetDir)$(TargetFileName).config
+
 
 C:\LegacyPrograms\FFC\FFC.exe /t12 "$(UniversalCRTSdkDir)Redist\$(TargetPlatformVersion)\ucrt\DLLs\$(PlatformTarget)\*" /to:"$(OutDir)"
 dir /B /s "$(UniversalCRTSdkDir)Redist\$(TargetPlatformVersion)\ucrt\DLLs\$(PlatformTarget)\" &gt;&gt; "$(OutDir)RedistCopied.txt"
@@ -97,7 +173,7 @@ dir /B /s "$(UniversalCRTSdkDir)Redist\$(TargetPlatformVersion)\ucrt\DLLs\$(Plat
 C:\LegacyPrograms\FFC\FFC.exe /t12 "$(VCInstallDir)Redist\MSVC\$(VCToolsRedistVersion)\$(PlatformTarget)\Microsoft.VC$(PlatformToolsetVersion).CRT\*" /to:"$(OutDir)"
 dir /B /s "$(VCInstallDir)Redist\MSVC\$(VCToolsRedistVersion)\$(PlatformTarget)\Microsoft.VC$(PlatformToolsetVersion).CRT\" &gt;&gt; "$(OutDir)RedistCopied.txt"
 
-</Command>
+del "$(OutDir)zzzDist.*"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
