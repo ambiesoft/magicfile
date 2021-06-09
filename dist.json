@@ -92,7 +92,8 @@
         "routines\\libtre-5.dll",
         "routines\\libwinpthread-1.dll",
         "routines\\magic.mgc",
-        "routines\\mime.txt"
+        "routines\\mime.txt",
+        "routines\\extramime.txt"
     ],
 
     "ShouldNotBeFiles": [
