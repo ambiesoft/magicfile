@@ -11,8 +11,8 @@
             }
     ],
     "archivedir": "C:/Linkout/",
-    "remotedir": "http://ambiesoft.mooo.com/ffdav/uploads/magicfile/",
-    "remotesha1" : "http://ambiesoft.mooo.com/ffdav/uploads/getSha1.php?file=magicfile/{}",
+    "remotedir": "https://ambiesoft.com/ffdav/uploads/magicfile/",
+    "remotesha1" : "https://ambiesoft.com/ffdav/uploads/getSha1.php?file=magicfile/{}",
     
     "TotalFileCount": "exact",
     
