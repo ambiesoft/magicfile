@@ -1,4 +1,7 @@
-﻿2021/06/26 v2.1.5
+﻿2021/07/02 v2.1.6
+Fix: If filename in command line contains space, it failed to launch.
+
+2021/06/26 v2.1.5
 Update library
 
 2021/06/09 v2.1.4

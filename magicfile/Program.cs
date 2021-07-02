@@ -57,7 +57,7 @@ namespace magicfile
 
                     try
                     {
-                        Process.Start(Application.ExecutablePath, arg);
+                        Process.Start(Application.ExecutablePath, AmbLib.doubleQuoteIfSpace(arg));
                     }
                     catch (Exception ex)
                     {
