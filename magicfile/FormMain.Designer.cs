@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnNavigate = new System.Windows.Forms.Button();
             this.btnChangeExt = new System.Windows.Forms.Button();
-            this.btnAbout = new System.Windows.Forms.Button();
+            this.btnOption = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtExt
@@ -109,12 +109,12 @@
             this.btnChangeExt.UseVisualStyleBackColor = true;
             this.btnChangeExt.Click += new System.EventHandler(this.btnChangeExt_Click);
             // 
-            // btnAbout
+            // btnOption
             // 
-            resources.ApplyResources(this.btnAbout, "btnAbout");
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            resources.ApplyResources(this.btnOption, "btnOption");
+            this.btnOption.Name = "btnOption";
+            this.btnOption.UseVisualStyleBackColor = true;
+            this.btnOption.Click += new System.EventHandler(this.btnOption_Click);
             // 
             // FormMain
             // 
@@ -122,7 +122,7 @@
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.btnAbout);
+            this.Controls.Add(this.btnOption);
             this.Controls.Add(this.btnChangeExt);
             this.Controls.Add(this.btnNavigate);
             this.Controls.Add(this.label4);
@@ -160,7 +160,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnNavigate;
         private System.Windows.Forms.Button btnChangeExt;
-        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btnOption;
     }
 }
 

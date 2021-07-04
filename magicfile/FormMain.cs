@@ -31,6 +31,16 @@ namespace magicfile
 {
     public partial class FormMain : Form
     {
+        static readonly string SECTION_OPTION = "Option";
+        static readonly string KEY_X =          "X";
+        static readonly string KEY_Y =          "Y";
+        static readonly string KEY_Width =      "Width";
+        static readonly string KEY_Height = "Height";
+        static readonly string KEY_LOCATIONSAVED = "LocationSaved";
+        static readonly string KEY_CLOSEAFTERRENAMING = "CloseAfterRenaming";
+        static readonly string KEY_SKIPWARNING = "SkipWarning";
+
+        Option option = new Option();
         public FormMain()
         {
             InitializeComponent();
@@ -38,17 +48,24 @@ namespace magicfile
             HashIni ini = Profile.ReadAll(IniFile);
 
             bool bval;
-            Profile.GetBool("Option", "LocationSaved", false, out bval, ini);
+            Profile.GetBool(SECTION_OPTION, KEY_LOCATIONSAVED, false, out bval, ini);
             if (bval)
             {
                 int x, y, width, height;
-                Profile.GetInt("Option", "X", this.Location.X, out x, ini);
-                Profile.GetInt("Option", "Y", this.Location.Y, out y, ini);
+                Profile.GetInt(SECTION_OPTION, KEY_X, this.Location.X, out x, ini);
+                Profile.GetInt(SECTION_OPTION, KEY_Y, this.Location.Y, out y, ini);
 
-                Profile.GetInt("Option", "Width", this.Size.Width, out width, ini);
-                Profile.GetInt("Option", "Height", this.Size.Height, out height, ini);
+                Profile.GetInt(SECTION_OPTION, KEY_Width, this.Size.Width, out width, ini);
+                Profile.GetInt(SECTION_OPTION, KEY_Height, this.Size.Height, out height, ini);
 
-                if(AmbLib.IsRectAppearInScreen(new Rectangle(x,y,width,height)))
+
+                Profile.GetBool(SECTION_OPTION, KEY_CLOSEAFTERRENAMING, false, out bval, ini);
+                option.chkCloseAfterRenaming.Checked = bval;
+                
+                Profile.GetBool(SECTION_OPTION, KEY_SKIPWARNING, false, out bval, ini);
+                option.chkSkipWarning.Checked = bval;
+
+                if (AmbLib.IsRectAppearInScreen(new Rectangle(x,y,width,height)))
                 {
                     this.StartPosition = FormStartPosition.Manual;
                     this.Location = new Point(x, y);
@@ -267,20 +284,29 @@ namespace magicfile
                     ext = ext.Split(' ')[0];
 
                     string dstname = srcwithoutext + '.' + ext;
-                    if (DialogResult.Yes != Ambiesoft.CppUtils.CenteredMessageBox(
-                        this,
-                        Properties.Resources.Q_RENAME_EXTENSION,
-                        Application.ProductName,
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question,
-                        MessageBoxDefaultButton.Button2))
+
+                    if (!option.chkSkipWarning.Checked)
                     {
-                        return;
+                        if (DialogResult.Yes != Ambiesoft.CppUtils.CenteredMessageBox(
+                            this,
+                            Properties.Resources.Q_RENAME_EXTENSION,
+                            Application.ProductName,
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question,
+                            MessageBoxDefaultButton.Button2))
+                        {
+                            return;
+                        }
                     }
 
                     srcinfo.MoveTo(dstname);
                     InputFile = dstname;
                     analyzefile(dstname);
+                    if(option.chkCloseAfterRenaming.Checked)
+                    {
+                        Close();
+                        return;
+                    }
                 }
             }
             catch (Exception ex)
@@ -288,22 +314,6 @@ namespace magicfile
                 MessageBox.Show(ex.Message, Application.ProductName,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Stop);
-            }
-
-        }
-
-        private void btnAbout_Click(object sender, EventArgs e)
-        {
-            //Ambiesoft.CppUtils.CenteredMessageBox(
-            //    this,
-            //    sb.ToString(),
-            //    Application.ProductName,
-            //    MessageBoxButtons.OK,
-            //    MessageBoxIcon.Information);
-
-            using( Aboutcs about = new Aboutcs())
-            {
-                about.ShowDialog(this);
             }
         }
 
@@ -323,17 +333,25 @@ namespace magicfile
             {
                 HashIni ini = Profile.ReadAll(IniFile);
 
-                Profile.WriteInt("Option", "X", this.Location.X, ini);
-                Profile.WriteInt("Option", "Y", this.Location.Y, ini);
-                Profile.WriteInt("Option", "Width", this.Size.Width, ini);
-                Profile.WriteInt("Option", "Height", this.Size.Height, ini);
-                Profile.WriteBool("Option", "LocationSaved", true, ini);
+                Profile.WriteInt(SECTION_OPTION, KEY_X, this.Location.X, ini);
+                Profile.WriteInt(SECTION_OPTION, KEY_Y, this.Location.Y, ini);
+                Profile.WriteInt(SECTION_OPTION, KEY_Width, this.Size.Width, ini);
+                Profile.WriteInt(SECTION_OPTION, KEY_Height, this.Size.Height, ini);
+                Profile.WriteBool(SECTION_OPTION, KEY_LOCATIONSAVED, true, ini);
 
-                if(!Profile.WriteAll(ini,IniFile))
+                Profile.WriteBool(SECTION_OPTION, KEY_CLOSEAFTERRENAMING, option.chkCloseAfterRenaming.Checked, ini);
+                Profile.WriteBool(SECTION_OPTION, KEY_SKIPWARNING, option.chkSkipWarning.Checked, ini);
+
+                if (!Profile.WriteAll(ini,IniFile))
                 {
                     Ambiesoft.CppUtils.Alert(this, Properties.Resources.FAILED_TO_SAVE_INIFILE);
                 }
             }
+        }
+
+        private void btnOption_Click(object sender, EventArgs e)
+        {
+            option.ShowDialog();
         }
     }
 }

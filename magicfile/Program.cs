@@ -51,7 +51,7 @@ namespace magicfile
                 {
                     if (!File.Exists(arg))
                     {
-                        CppUtils.Fatal(string.Format(Properties.Resources.INTPUFILE_NOT_FOUND, args[0]));
+                        CppUtils.Fatal(string.Format(Properties.Resources.INTPUFILE_NOT_FOUND, arg));
                         continue;
                     }
 
