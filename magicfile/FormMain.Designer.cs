@@ -119,8 +119,8 @@
             // FormMain
             // 
             this.AcceptButton = this.btnOK;
-            this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
+            this.AllowDrop = true;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.btnOption);
             this.Controls.Add(this.btnChangeExt);

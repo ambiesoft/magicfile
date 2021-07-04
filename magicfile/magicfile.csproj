@@ -110,6 +110,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Option.ja-JP.resx">
+      <DependentUpon>Option.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Option.resx">
       <DependentUpon>Option.cs</DependentUpon>
     </EmbeddedResource>
