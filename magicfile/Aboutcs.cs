@@ -30,7 +30,7 @@ namespace magicfile
 
                 sb.AppendLine();
                 sb.AppendLine(Ambiesoft.AmbLib.getAssemblyCopyright(Assembly.GetExecutingAssembly()));// "Copyright 2017 Ambiesoft");
-                sb.AppendLine("https://github.com/ambiesoft/magicfile");
+                sb.AppendLine("https://ambiesoft.github.io/webjumper/?target=magicfile");
 
 
                 sb.AppendLine();
