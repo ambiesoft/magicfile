@@ -195,24 +195,55 @@ namespace magicfile
                 }
             }
 
-            string text = txtExt.Text;
-            text = text.Split(' ')[0];
-            if( string.IsNullOrEmpty(origExt) || ( 
-                (txtExt.Text.Length != 0 &&
-                (string.Compare(text, origExt, true) != 0)) &&
-                !IsWellknownExtension(text)))
+            string firstExt = Program.GetFirstExtension(txtExt.Text);
+            do
             {
+                if(string.IsNullOrEmpty(firstExt))
+                {
+                    btnChangeExt.Enabled = false;
+                    break;
+                }
+                if (string.IsNullOrEmpty(origExt) &&
+                    !string.IsNullOrEmpty(firstExt))
+                {
+                    btnChangeExt.Enabled = true;
+                    break;
+                }
+                if (IsExtensionContains(txtExt.Text, origExt))
+                {
+                    btnChangeExt.Enabled = false;
+                    break;
+                }
+                if (IsWellknownExtension(firstExt))
+                {
+                    btnChangeExt.Enabled = false;
+                    break;
+                }
+
                 btnChangeExt.Enabled = true;
-            }
-            else
+            } while (false);
+        }
+        bool IsExtensionContains(string exts, string ext)
+        {
+            string[] all = exts.Split(' ');
+            foreach(string s in all)
             {
-                btnChangeExt.Enabled = false;
+                if(string.Compare(Program.RemoveDotFromExt(s),
+                    Program.RemoveDotFromExt(ext),
+                    true)==0)
+                {
+                    return true;
+                }
             }
+            return false;
         }
         bool IsWellknownExtension(string ext)
         {
-            return string.Compare(ext, "bin", true) == 0 ||
-                string.Compare(ext, "txt", true) == 0;
+            ext = Program.RemoveDotFromExt(ext);
+            return
+                string.Compare(ext, "bin", true) == 0 ||
+                string.Compare(ext, "txt", true) == 0 ||
+                string.Compare(ext, "xml", true) == 0;
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
@@ -276,8 +307,10 @@ namespace magicfile
                     string src = InputFile;
                     FileInfo srcinfo = new FileInfo(src);
                     int extlen = srcinfo.Extension.Length;
-                    if (extlen >= 5)
-                        extlen = 0;
+
+                    // What is this?
+                    //if (extlen >= 5)
+                    //    extlen = 0;
 
                     string srcwithoutext = srcinfo.FullName.Substring(0, srcinfo.FullName.Length - extlen);
                     string ext = txtExt.Text;
@@ -287,9 +320,11 @@ namespace magicfile
 
                     if (!option.chkSkipWarning.Checked)
                     {
-                        if (DialogResult.Yes != Ambiesoft.CppUtils.CenteredMessageBox(
+                        string message = string.Format(Properties.Resources.Q_RENAME_EXTENSION,
+                            Path.GetExtension(src), Path.GetExtension(dstname));
+                        if (DialogResult.Yes != CppUtils.CenteredMessageBox(
                             this,
-                            Properties.Resources.Q_RENAME_EXTENSION,
+                            message,
                             Application.ProductName,
                             MessageBoxButtons.YesNo,
                             MessageBoxIcon.Question,
@@ -311,7 +346,7 @@ namespace magicfile
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, Application.ProductName,
+                CppUtils.CenteredMessageBox(ex.Message, Application.ProductName,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Stop);
             }

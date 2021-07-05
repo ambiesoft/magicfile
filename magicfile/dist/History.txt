@@ -1,4 +1,7 @@
-﻿2021/07/04 v2.1.7
+﻿2021/07/05 v2.1.8
+Fixes internal details
+
+2021/07/04 v2.1.7
 Add options for 'Close after rename' and 'Skip waring'
 I18N
 
