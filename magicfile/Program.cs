@@ -21,6 +21,8 @@ using System.IO;
 using System.Diagnostics;
 
 using Ambiesoft;
+using NDesk.Options;
+using System.Globalization;
 
 namespace magicfile
 {
@@ -29,9 +31,36 @@ namespace magicfile
         static bool processArgs(string[] args, out string inputFile)
         {
             inputFile = string.Empty;
-            if (args.Length > 1)
+            string lang = string.Empty;
+            var optionSet = new OptionSet() {
+                {
+                    "lang=",
+                    "Language, ex) 'ja_JP'",
+                    v => {
+                        lang = v;
+                    }
+                },
+            };
+            List<string> extra = optionSet.Parse(args);
+
+            if (!string.IsNullOrEmpty(lang))
             {
-                foreach (string arg in args)
+                try
+                {
+                    CultureInfo ci = new CultureInfo(lang);
+                    System.Threading.Thread.CurrentThread.CurrentCulture = ci;
+                    System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, Application.ProductName,
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            if (extra.Count > 1)
+            {
+                foreach (string arg in extra)
                 {
                     if (!File.Exists(arg))
                     {
@@ -51,9 +80,9 @@ namespace magicfile
                 }
                 return false;
             }
-            else if (args.Length == 1)
+            else if (extra.Count == 1)
             {
-                inputFile = args[0];
+                inputFile = extra[0];
             }
             return true;
         }
