@@ -129,6 +129,9 @@
   <data name="INTPUFILE_NOT_FOUND" xml:space="preserve">
     <value>"{0}" が見つかりません。</value>
   </data>
+  <data name="NO_EXTENSION" xml:space="preserve">
+    <value>&lt;拡張子なし&gt;</value>
+  </data>
   <data name="Q_RENAME_EXTENSION" xml:space="preserve">
     <value>拡張子を {0} から {1} へリネームしますか？</value>
   </data>

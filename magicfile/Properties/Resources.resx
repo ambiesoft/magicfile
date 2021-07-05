@@ -129,7 +129,10 @@
   <data name="INTPUFILE_NOT_FOUND" xml:space="preserve">
     <value>"{0}" not found.</value>
   </data>
+  <data name="NO_EXTENSION" xml:space="preserve">
+    <value>&lt;No Extension&gt;</value>
+  </data>
   <data name="Q_RENAME_EXTENSION" xml:space="preserve">
-    <value>Are you sure to rename extension from from {0} to {1}?</value>
+    <value>Are you sure to rename extension from {0} to {1}?</value>
   </data>
 </root>

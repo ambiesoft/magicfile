@@ -321,7 +321,8 @@ namespace magicfile
                     if (!option.chkSkipWarning.Checked)
                     {
                         string message = string.Format(Properties.Resources.Q_RENAME_EXTENSION,
-                            Path.GetExtension(src), Path.GetExtension(dstname));
+                            string.IsNullOrEmpty(Path.GetExtension(src)) ? Properties.Resources.NO_EXTENSION : Path.GetExtension(src),
+                            Path.GetExtension(dstname));
                         if (DialogResult.Yes != CppUtils.CenteredMessageBox(
                             this,
                             message,
