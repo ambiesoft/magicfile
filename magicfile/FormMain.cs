@@ -81,7 +81,10 @@ namespace magicfile
             get { return _inputFile; }
             set {
                 _inputFile = value;
-                this.Text = Path.GetFileName(_inputFile) + " - " + Application.ProductName;
+                if (string.IsNullOrEmpty(_inputFile))
+                    this.Text = Application.ProductName;
+                else
+                    this.Text = Path.GetFileName(_inputFile) + " - " + Application.ProductName;
             }
         }
 
