@@ -1,0 +1,7 @@
+Prepare msys2
+
+$ git submodule update -i
+$ cd file/
+$ autoreconf -f -i
+$ MAKE=mingw32-make.exe ./configure --disable-silent-rules
+$ mingw32-make.exe
