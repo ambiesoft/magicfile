@@ -75,6 +75,7 @@ namespace magicfile
             this.MinimizeBox = false;
             this.Name = "Option";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 
