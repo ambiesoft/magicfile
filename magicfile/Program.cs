@@ -23,46 +23,117 @@ using System.Diagnostics;
 using Ambiesoft;
 using NDesk.Options;
 using System.Globalization;
+using System.Text;
+using System.Reflection;
 
 namespace magicfile
 {
     static class Program
     {
+        static List<string> safeParse(OptionSet optionSet, string[] args)
+        {
+            try
+            {
+                return optionSet.Parse(args);
+            }
+            catch(Exception ex)
+            {
+                CppUtils.Fatal(ex);
+                Environment.Exit(-1);
+            }
+            return null;
+        }
         static bool processArgs(string[] args, out string inputFile)
         {
             inputFile = string.Empty;
-            string lang = string.Empty;
-            var optionSet = new OptionSet() {
-                {
-                    "lang=",
-                    "Language, ex) 'ja_JP'",
-                    v => {
-                        lang = v;
-                    }
-                },
-            };
-            List<string> extra = optionSet.Parse(args);
 
-            if (!string.IsNullOrEmpty(lang))
+            // first get lang from command line and set culture
             {
-                try
+                string lang = string.Empty;
+                var optionSetForLang = new OptionSet()
                 {
-                    CultureInfo ci = new CultureInfo(lang);
-                    System.Threading.Thread.CurrentThread.CurrentCulture = ci;
-                    System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
-                }
-                catch(Exception ex)
+                    {
+                        "lang=",
+                        Properties.Resources.STR_COMMANDLINEHELP_LANG,
+                        v =>
+                        {
+                            lang = v;
+                        }
+                    },
+                };
+                safeParse(optionSetForLang, args);
+                if (!string.IsNullOrEmpty(lang))
                 {
-                    MessageBox.Show(ex.Message, Application.ProductName,
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    try
+                    {
+                        CultureInfo ci = new CultureInfo(lang);
+                        System.Threading.Thread.CurrentThread.CurrentCulture = ci;
+                        System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, Application.ProductName,
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
 
+            bool showHelp = false;
+            bool showVersion = false;
+            string dummy;
+            var optionSet = new OptionSet() 
+            {
+                {
+                    "lang=",
+                    Properties.Resources.STR_COMMANDLINEHELP_LANG,
+                    v =>
+                    {
+                        dummy = v;
+                    }
+                },
+                {
+                    "h|help|?",
+                    Properties.Resources.STR_SHOWHELP,
+                    v =>
+                    {
+                        showHelp = true;
+                    }
+                },
+                {
+                    "v|version",
+                    Properties.Resources.STR_SHOWHELP,
+                    v =>
+                    {
+                        showVersion = true;
+                    }
+                }
+            };
+            List<string> extra = safeParse(optionSet, args);
+            
+            if(showHelp)
+            {
+                StringBuilder sb = new StringBuilder();
+                using (StringWriter sw = new StringWriter(sb))
+                    optionSet.WriteOptionDescriptions(sw);
+                MessageBox.Show(sb.ToString(), Application.ProductName,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+            if(showVersion)
+            {
+                MessageBox.Show(
+                    string.Format("{0} v{1}",
+                    Application.ProductName, AmbLib.getAssemblyVersion(Assembly.GetExecutingAssembly(), 3)),
+                    Application.ProductName,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return false;
+            }
             if (extra.Count > 1)
             {
                 foreach (string arg in extra)
                 {
-                    if (!File.Exists(arg))
+                    if (!File.Exists(arg) && !Directory.Exists(arg))
                     {
                         CppUtils.Fatal(string.Format(Properties.Resources.INTPUFILE_NOT_FOUND, arg));
                         continue;

@@ -135,4 +135,13 @@
   <data name="Q_RENAME_EXTENSION" xml:space="preserve">
     <value>拡張子を {0} から {1} へリネームしますか？</value>
   </data>
+  <data name="STR_COMMANDLINEHELP_LANG" xml:space="preserve">
+    <value>言語 （例） ja-JP</value>
+  </data>
+  <data name="STR_SHOWHELP" xml:space="preserve">
+    <value>ヘルプを表示</value>
+  </data>
+  <data name="STR_SHOWVERSION" xml:space="preserve">
+    <value>バージョンを表示</value>
+  </data>
 </root>

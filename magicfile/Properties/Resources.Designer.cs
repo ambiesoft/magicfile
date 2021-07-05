@@ -113,5 +113,32 @@ namespace magicfile.Properties {
                 return ResourceManager.GetString("Q_RENAME_EXTENSION", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language, ex) &apos;ja-JP&apos;.
+        /// </summary>
+        internal static string STR_COMMANDLINEHELP_LANG {
+            get {
+                return ResourceManager.GetString("STR_COMMANDLINEHELP_LANG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show help.
+        /// </summary>
+        internal static string STR_SHOWHELP {
+            get {
+                return ResourceManager.GetString("STR_SHOWHELP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show version.
+        /// </summary>
+        internal static string STR_SHOWVERSION {
+            get {
+                return ResourceManager.GetString("STR_SHOWVERSION", resourceCulture);
+            }
+        }
     }
 }

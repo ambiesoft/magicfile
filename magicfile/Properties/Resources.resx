@@ -135,4 +135,13 @@
   <data name="Q_RENAME_EXTENSION" xml:space="preserve">
     <value>Are you sure to rename extension from {0} to {1}?</value>
   </data>
+  <data name="STR_COMMANDLINEHELP_LANG" xml:space="preserve">
+    <value>Language, ex) 'ja-JP'</value>
+  </data>
+  <data name="STR_SHOWHELP" xml:space="preserve">
+    <value>Show help</value>
+  </data>
+  <data name="STR_SHOWVERSION" xml:space="preserve">
+    <value>Show version</value>
+  </data>
 </root>
