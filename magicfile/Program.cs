@@ -30,19 +30,6 @@ namespace magicfile
 {
     static class Program
     {
-        static List<string> safeParse(OptionSet optionSet, string[] args)
-        {
-            try
-            {
-                return optionSet.Parse(args);
-            }
-            catch(Exception ex)
-            {
-                CppUtils.Fatal(ex);
-                Environment.Exit(-1);
-            }
-            return null;
-        }
         static bool processArgs(string[] args, out string inputFile)
         {
             inputFile = string.Empty;
@@ -61,7 +48,7 @@ namespace magicfile
                         }
                     },
                 };
-                safeParse(optionSetForLang, args);
+                optionSetForLang.SafeParse(args);
                 if (!string.IsNullOrEmpty(lang))
                 {
                     try
@@ -108,7 +95,7 @@ namespace magicfile
                     }
                 }
             };
-            List<string> extra = safeParse(optionSet, args);
+            List<string> extra = optionSet.SafeParse(args);
             
             if(showHelp)
             {

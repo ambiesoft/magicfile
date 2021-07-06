@@ -94,7 +94,7 @@
     <Compile Include="Option.Designer.cs">
       <DependentUpon>Option.cs</DependentUpon>
     </Compile>
-    <Compile Include="Options.cs" />
+    <Compile Include="OptionSet\OptionSet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Aboutcs.ja-JP.resx">
