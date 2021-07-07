@@ -669,4 +669,5 @@ text/rtf	.rtf
 application/font-sfnt	.ttc, .ttf
 text/x-ms-regedit	.reg
 image/x-win-bitmap	.cur
+application/x-ms-pdb	.pdb
 
