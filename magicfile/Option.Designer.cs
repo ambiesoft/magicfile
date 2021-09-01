@@ -41,6 +41,7 @@ namespace magicfile
             resources.ApplyResources(this.chkCloseAfterRenaming, "chkCloseAfterRenaming");
             this.chkCloseAfterRenaming.Name = "chkCloseAfterRenaming";
             this.chkCloseAfterRenaming.UseVisualStyleBackColor = true;
+            this.chkCloseAfterRenaming.CheckedChanged += new System.EventHandler(this.chkCloseAfterRenaming_CheckedChanged);
             // 
             // btnOK
             // 
@@ -61,6 +62,7 @@ namespace magicfile
             resources.ApplyResources(this.chkSkipWarning, "chkSkipWarning");
             this.chkSkipWarning.Name = "chkSkipWarning";
             this.chkSkipWarning.UseVisualStyleBackColor = true;
+            this.chkSkipWarning.CheckedChanged += new System.EventHandler(this.chkSkipWarning_CheckedChanged);
             // 
             // Option
             // 
@@ -83,8 +85,8 @@ namespace magicfile
 
         #endregion
         private System.Windows.Forms.Button btnOK;
-        internal System.Windows.Forms.CheckBox chkCloseAfterRenaming;
         private System.Windows.Forms.Button btnAbout;
-        internal System.Windows.Forms.CheckBox chkSkipWarning;
+        private System.Windows.Forms.CheckBox chkCloseAfterRenaming;
+        private System.Windows.Forms.CheckBox chkSkipWarning;
     }
 }

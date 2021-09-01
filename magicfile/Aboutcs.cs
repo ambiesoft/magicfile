@@ -26,7 +26,7 @@ namespace magicfile
                 sb.Append("version");
                 sb.Append(" ");
 
-                sb.Append(Ambiesoft.AmbLib.getAssemblyVersion(Assembly.GetExecutingAssembly(),3));
+                sb.Append(Ambiesoft.AmbLib.getAssemblyVersion(Assembly.GetExecutingAssembly(), 3));
 
                 sb.AppendLine();
                 sb.AppendLine(Ambiesoft.AmbLib.getAssemblyCopyright(Assembly.GetExecutingAssembly()));// "Copyright 2017 Ambiesoft");
@@ -56,7 +56,7 @@ namespace magicfile
 
             // file
             {
-                StringBuilder sb=new StringBuilder();
+                StringBuilder sb = new StringBuilder();
                 string fileexe = Path.Combine(
                     Path.GetDirectoryName(Application.ExecutablePath),
                     "routines",
@@ -82,6 +82,11 @@ namespace magicfile
                     // fileexe not found
                     txtFile.Text = string.Format(Properties.Resources.FILEEXE_NOT_FOUND, fileexe);
                 }
+            }
+
+            // Gitrev
+            {
+                txtGitrev.Text = Ambiesoft.GitRev.GetHashMessage();
             }
 
             // donate

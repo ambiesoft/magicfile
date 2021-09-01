@@ -199,7 +199,7 @@
     <value>Vertical</value>
   </data>
   <data name="txtFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 265</value>
+    <value>365, 263</value>
   </data>
   <data name="txtFile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,13 +217,13 @@
     <value>0</value>
   </data>
   <data name="tbFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 24</value>
   </data>
   <data name="tbFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tbFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 265</value>
+    <value>365, 263</value>
   </data>
   <data name="tbFile.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -243,6 +243,60 @@
   <data name="&gt;&gt;tbFile.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="txtGitrev.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtGitrev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="txtGitrev.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtGitrev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 257</value>
+  </data>
+  <data name="txtGitrev.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtGitrev.Name" xml:space="preserve">
+    <value>txtGitrev</value>
+  </data>
+  <data name="&gt;&gt;txtGitrev.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtGitrev.Parent" xml:space="preserve">
+    <value>tbGitrev</value>
+  </data>
+  <data name="&gt;&gt;txtGitrev.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbGitrev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tbGitrev.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tbGitrev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>365, 263</value>
+  </data>
+  <data name="tbGitrev.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbGitrev.Text" xml:space="preserve">
+    <value>Gitrev</value>
+  </data>
+  <data name="&gt;&gt;tbGitrev.Name" xml:space="preserve">
+    <value>tbGitrev</value>
+  </data>
+  <data name="&gt;&gt;tbGitrev.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbGitrev.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tbGitrev.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="txtDonate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -253,7 +307,7 @@
     <value>True</value>
   </data>
   <data name="txtDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 265</value>
+    <value>365, 263</value>
   </data>
   <data name="txtDonate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -274,13 +328,13 @@
     <value>0</value>
   </data>
   <data name="tbDonate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 22</value>
+    <value>4, 24</value>
   </data>
   <data name="tbDonate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="tbDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>365, 265</value>
+    <value>365, 263</value>
   </data>
   <data name="tbDonate.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -298,7 +352,7 @@
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tbDonate.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 11</value>

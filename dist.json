@@ -10,6 +10,14 @@
                 "platform":"Any CPU"
             }
     ],
+    "gitrev": {
+    	"gits": ["C:/cygwin/bin/git.exe", "C:/local/msys2/usr/bin/git.exe"],
+    	"gitdirs": [
+	    	".", 
+	    	"../distSolution"
+	    ],
+    	"outcsharp": "magicfile/gitrev.cs"
+    },    
     "archivedir": "C:/Linkout/",
     "remotedir": "https://ambiesoft.com/ffdav/uploads/magicfile/",
     "remotesha1" : "https://ambiesoft.com/ffdav/uploads/getSha1.php?file=magicfile/{}",

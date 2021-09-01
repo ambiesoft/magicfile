@@ -1,4 +1,8 @@
-﻿2021/07/06 v2.1.10
+﻿2021/09/02 v2.1.11
+Modified: Change timing to load option data
+Added: Gitrev
+
+2021/07/06 v2.1.10
 Fix: Removed '-' from title if no input files were provided.
 
 2021/07/05 v2.1.9

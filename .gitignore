@@ -12,3 +12,5 @@ Release/
 Debug/
 .*~
 
+magicfile/gitrev.cs
+

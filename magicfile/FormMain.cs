@@ -58,12 +58,7 @@ namespace magicfile
                 Profile.GetInt(SECTION_OPTION, KEY_Width, this.Size.Width, out width, ini);
                 Profile.GetInt(SECTION_OPTION, KEY_Height, this.Size.Height, out height, ini);
 
-
-                Profile.GetBool(SECTION_OPTION, KEY_CLOSEAFTERRENAMING, false, out bval, ini);
-                option.chkCloseAfterRenaming.Checked = bval;
-                
-                Profile.GetBool(SECTION_OPTION, KEY_SKIPWARNING, false, out bval, ini);
-                option.chkSkipWarning.Checked = bval;
+                LoadOptionData(ini);
 
                 if (AmbLib.IsRectAppearInScreen(new Rectangle(x,y,width,height)))
                 {
@@ -72,7 +67,16 @@ namespace magicfile
                     this.Size = new Size(width, height);
                 }
             }            
+        }
 
+        void LoadOptionData(HashIni ini)
+        {
+            bool bval;
+            Profile.GetBool(SECTION_OPTION, KEY_CLOSEAFTERRENAMING, false, out bval, ini);
+            option.IsCloseAfterRenaming = bval;
+            Profile.GetBool(SECTION_OPTION, KEY_SKIPWARNING, false, out bval, ini);
+            option.IsSkipWarning = bval;
+            option.ClearDirty();
         }
 
         private string _inputFile;
@@ -321,7 +325,7 @@ namespace magicfile
 
                     string dstname = srcwithoutext + '.' + ext;
 
-                    if (!option.chkSkipWarning.Checked)
+                    if (!option.IsSkipWarning)
                     {
                         string message = string.Format(Properties.Resources.Q_RENAME_EXTENSION,
                             string.IsNullOrEmpty(Path.GetExtension(src)) ? Properties.Resources.NO_EXTENSION : Path.GetExtension(src),
@@ -341,7 +345,7 @@ namespace magicfile
                     srcinfo.MoveTo(dstname);
                     InputFile = dstname;
                     analyzefile(dstname);
-                    if(option.chkCloseAfterRenaming.Checked)
+                    if(option.IsCloseAfterRenaming)
                     {
                         Close();
                         return;
@@ -378,9 +382,11 @@ namespace magicfile
                 Profile.WriteInt(SECTION_OPTION, KEY_Height, this.Size.Height, ini);
                 Profile.WriteBool(SECTION_OPTION, KEY_LOCATIONSAVED, true, ini);
 
-                Profile.WriteBool(SECTION_OPTION, KEY_CLOSEAFTERRENAMING, option.chkCloseAfterRenaming.Checked, ini);
-                Profile.WriteBool(SECTION_OPTION, KEY_SKIPWARNING, option.chkSkipWarning.Checked, ini);
-
+                if (option.Dirty)
+                {
+                    Profile.WriteBool(SECTION_OPTION, KEY_CLOSEAFTERRENAMING, option.IsCloseAfterRenaming, ini);
+                    Profile.WriteBool(SECTION_OPTION, KEY_SKIPWARNING, option.IsSkipWarning, ini);
+                }
                 if (!Profile.WriteAll(ini,IniFile))
                 {
                     Ambiesoft.CppUtils.Alert(this, Properties.Resources.FAILED_TO_SAVE_INIFILE);
@@ -390,6 +396,8 @@ namespace magicfile
 
         private void btnOption_Click(object sender, EventArgs e)
         {
+            HashIni ini = Profile.ReadAll(IniFile);
+            LoadOptionData(ini);
             option.ShowDialog();
         }
     }

@@ -37,10 +37,13 @@
             this.tbDonate = new System.Windows.Forms.TabPage();
             this.txtDonate = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
+            this.tbGitrev = new System.Windows.Forms.TabPage();
+            this.txtGitrev = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tbMagicFile.SuspendLayout();
             this.tbFile.SuspendLayout();
             this.tbDonate.SuspendLayout();
+            this.tbGitrev.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -48,6 +51,7 @@
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tbMagicFile);
             this.tabControl1.Controls.Add(this.tbFile);
+            this.tabControl1.Controls.Add(this.tbGitrev);
             this.tabControl1.Controls.Add(this.tbDonate);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -98,6 +102,19 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
+            // tbGitrev
+            // 
+            this.tbGitrev.Controls.Add(this.txtGitrev);
+            resources.ApplyResources(this.tbGitrev, "tbGitrev");
+            this.tbGitrev.Name = "tbGitrev";
+            this.tbGitrev.UseVisualStyleBackColor = true;
+            // 
+            // txtGitrev
+            // 
+            resources.ApplyResources(this.txtGitrev, "txtGitrev");
+            this.txtGitrev.Name = "txtGitrev";
+            this.txtGitrev.ReadOnly = true;
+            // 
             // Aboutcs
             // 
             this.AcceptButton = this.btnOK;
@@ -118,6 +135,8 @@
             this.tbFile.PerformLayout();
             this.tbDonate.ResumeLayout(false);
             this.tbDonate.PerformLayout();
+            this.tbGitrev.ResumeLayout(false);
+            this.tbGitrev.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -132,5 +151,7 @@
         private System.Windows.Forms.TextBox txtFile;
         private System.Windows.Forms.TabPage tbDonate;
         private System.Windows.Forms.TextBox txtDonate;
+        private System.Windows.Forms.TabPage tbGitrev;
+        private System.Windows.Forms.TextBox txtGitrev;
     }
 }

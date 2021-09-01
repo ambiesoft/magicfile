@@ -11,6 +11,7 @@ namespace magicfile
 {
     public partial class Option : Form
     {
+        bool dirty_ = false;
         public Option()
         {
             InitializeComponent();
@@ -22,6 +23,46 @@ namespace magicfile
             {
                 about.ShowDialog(this);
             }
+        }
+
+        public bool IsCloseAfterRenaming
+        {
+            get { return chkCloseAfterRenaming.Checked; }
+            set
+            {
+                if (chkCloseAfterRenaming.Checked != value)
+                    dirty_ = true;
+                chkCloseAfterRenaming.Checked = value;
+            }
+        }
+        public bool IsSkipWarning
+        {
+            get { return chkSkipWarning.Checked; }
+            set
+            {
+                if (chkSkipWarning.Checked != value)
+                    dirty_ = true;
+                chkSkipWarning.Checked = value;
+            }
+        }
+        public bool Dirty
+        {
+            get { return dirty_; }
+        }
+
+        private void chkCloseAfterRenaming_CheckedChanged(object sender, EventArgs e)
+        {
+            dirty_ = true;
+        }
+
+        private void chkSkipWarning_CheckedChanged(object sender, EventArgs e)
+        {
+            dirty_ = true;
+        }
+
+        internal void ClearDirty()
+        {
+            dirty_ = false;
         }
     }
 }
