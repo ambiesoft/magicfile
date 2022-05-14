@@ -5,7 +5,7 @@ Magicfileはファイルの種類を判定します。
 バイナリはここからダウンロードできます。 <https://github.com/ambiesoft/magicfile/releases>.
 
 ## 環境
-.Net 4.0以上が必要です。
+.Net Framework 4.8以上が必要です。
 
 ## ライセンス
 このソフトはフリーウェアです。GPLv3でライセンスされます。
@@ -27,8 +27,6 @@ Magicfileはファイルの種類を判定します。
 - 作者: Ambiesoft trueff
 - E-mail: ambiesoft.trueff@gmail.com
 - 開発: <https://github.com/ambiesoft/magicfile>
-
-
 
 ## 法的情報
 * <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>

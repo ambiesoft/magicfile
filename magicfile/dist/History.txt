@@ -1,4 +1,8 @@
-﻿2021/09/02 v2.1.11
+﻿2022/05/14 v2.2.1
+Migrated to .Net4.8
+The control's position was overlapped when running on high-dpi
+
+2021/09/02 v2.1.11
 Modified: Change timing to load option data
 Added: Gitrev
 

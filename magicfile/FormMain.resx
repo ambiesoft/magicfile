@@ -126,7 +126,7 @@
     <value>87, 113</value>
   </data>
   <data name="txtExt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 23</value>
+    <value>395, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtExt.TabIndex" type="System.Int32, mscorlib">
@@ -151,7 +151,7 @@
     <value>87, 88</value>
   </data>
   <data name="txtMime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 23</value>
+    <value>395, 23</value>
   </data>
   <data name="txtMime.TabIndex" type="System.Int32, mscorlib">
     <value>700</value>
@@ -175,7 +175,7 @@
     <value>87, 63</value>
   </data>
   <data name="txtMagic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 23</value>
+    <value>395, 23</value>
   </data>
   <data name="txtMagic.TabIndex" type="System.Int32, mscorlib">
     <value>500</value>
@@ -196,7 +196,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>399, 152</value>
+    <value>402, 162</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 23</value>
@@ -223,10 +223,10 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="txtFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 24</value>
+    <value>12, 26</value>
   </data>
   <data name="txtFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 23</value>
+    <value>434, 23</value>
   </data>
   <data name="txtFile.TabIndex" type="System.Int32, mscorlib">
     <value>200</value>
@@ -355,10 +355,10 @@
     <value>Top, Right</value>
   </data>
   <data name="btnNavigate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>449, 24</value>
+    <value>452, 26</value>
   </data>
   <data name="btnNavigate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 19</value>
+    <value>30, 23</value>
   </data>
   <data name="btnNavigate.TabIndex" type="System.Int32, mscorlib">
     <value>300</value>
@@ -385,7 +385,7 @@
     <value>False</value>
   </data>
   <data name="btnChangeExt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 152</value>
+    <value>232, 162</value>
   </data>
   <data name="btnChangeExt.Size" type="System.Drawing.Size, System.Drawing">
     <value>164, 23</value>
@@ -412,7 +412,7 @@
     <value>Bottom, Left</value>
   </data>
   <data name="btnOption.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 152</value>
+    <value>12, 162</value>
   </data>
   <data name="btnOption.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 23</value>
@@ -442,7 +442,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>491, 186</value>
+    <value>494, 196</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Meiryo UI, 9pt</value>
@@ -9831,7 +9831,7 @@
 </value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>392, 218</value>
+    <value>510, 235</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>MagicFile</value>
