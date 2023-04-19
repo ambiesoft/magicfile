@@ -1,0 +1,16 @@
+magicfile/app.manifest
+magicfile/dist/History.txt
+
+*.rc
+*.rc2
+*.resx
+*.ico
+*.png
+*.jpg
+*.Designer.cs
+*.def
+*jpn.txt
+*jp.md
+*__
+*.7z
+*.html
